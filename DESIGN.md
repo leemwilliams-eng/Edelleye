@@ -31,7 +31,7 @@ Traditional 1px solid borders are strictly prohibited for sectioning. They creat
 
 The tension between the headlines and the body text is what creates the "Cinematic" feel.
 
-- **Headlines (Plus Jakarta Sans / GT Walsheim substitute):** Must use **negative letter-spacing** (-0.02em to -0.05em). This creates a "tight," authoritative block of text that feels custom-fitted.
+- **Headlines (Plus Jakarta Sans / GT Walsheim substitute):** Must use **-0.02em letter-spacing** on all headings (h2, h3, h4). Applied globally via CSS — no exceptions. This creates a consistent, authoritative typographic feel across the site.
 - **Body & Labels (Inter):** Utilize extensive **OpenType features** (tnum, ss01, case). Use `body-md` for standard reading and `label-sm` for technical metadata. Inter’s neutrality provides the "functional" contrast to the expressive headline face.
 
 ### Heading Hierarchy
@@ -42,7 +42,7 @@ No H1 tags are used on any page. H2 is the top-level display heading. All hero/d
 | :--- | :--- | :--- | :--- | :--- |
 | **Display** | H2 | Plus Jakarta Sans | `text-4xl md:text-5xl` | -0.02em |
 | **Section** | H2 | Plus Jakarta Sans | `text-3xl` | -0.02em |
-| **Sub-section** | H3 | Plus Jakarta Sans | `text-xl` | 0 |
+| **Sub-section** | H3 | Plus Jakarta Sans | `text-xl` | -0.02em |
 | **Body-MD** | p | Inter | `text-base` (0.875rem) | 0.01em |
 | **Label-SM** | span | Inter | `text-[10px]–text-[12px]` | 0.05em (Uppercase) |
 
@@ -86,4 +86,4 @@ We do not use drop shadows to indicate "height"; we use **Light and Layering**.
 ### Don’t:
 - **Don't use 100% Opaque Borders:** This immediately breaks the "high-end" illusion and reverts to a generic UI look.
 - **Don't use standard Grey shadows:** Always tint your shadows with the Primary or Secondary brand colors to maintain tonal depth.
-- **Don't use standard Letter-spacing for Headlines:** If GT Walsheim isn't tight, it isn't "Edelleye."
+- **Don't use standard Letter-spacing for Headlines:** All headings must be -0.02em. Never use Tailwind's `tracking-tight` (-0.025em) or default tracking (0) on any h2/h3/h4. Labels and uppercase metadata are exempt — they use `tracking-widest`.
