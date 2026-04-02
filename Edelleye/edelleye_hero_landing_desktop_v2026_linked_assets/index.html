@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Edelleye | Growth Engines for the Digital Era</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-container": "#ffdec5",
+              "surface": "#131313",
+              "tertiary": "#ffb869",
+              "outline-variant": "#3e484f",
+              "on-secondary-fixed-variant": "#6c3a00",
+              "tertiary-fixed-dim": "#ffb869",
+              "primary-fixed": "#c2e8ff",
+              "primary": "#3AB0E2",
+              "outline": "#889299",
+              "on-tertiary-fixed": "#2b1700",
+              "tertiary-container": "#e29432",
+              "primary-container": "#3ab0e2",
+              "inverse-on-surface": "#303030",
+              "background": "#000000",
+              "on-tertiary": "#482900",
+              "on-primary": "#003548",
+              "secondary-fixed-dim": "#ffb778",
+              "surface-container-lowest": "#0e0e0e",
+              "surface-container-high": "#2a2a2a",
+              "on-surface-variant": "#bdc8d0",
+              "secondary-fixed": "#ffdcc1",
+              "surface-dim": "#131313",
+              "on-error-container": "#ffdad6",
+              "surface-tint": "#3AB0E2",
+              "surface-container-low": "#1b1b1b",
+              "surface-container": "#1f1f1f",
+              "secondary": "#e29432",
+              "on-primary-fixed": "#001e2b",
+              "on-tertiary-container": "#573200",
+              "on-error": "#690005",
+              "on-background": "#e2e2e2",
+              "surface-variant": "#353535",
+              "on-secondary": "#4c2700",
+              "surface-container-highest": "#353535",
+              "on-primary-container": "#004056",
+              "error-container": "#93000a",
+              "error": "#ffb4ab",
+              "on-surface": "#e2e2e2",
+              "on-secondary-fixed": "#2e1500",
+              "secondary-container": "#995400",
+              "primary-fixed-dim": "#3AB0E2",
+              "on-primary-fixed-variant": "#004d67",
+              "surface-bright": "#393939",
+              "on-tertiary-fixed-variant": "#673d00",
+              "tertiary-fixed": "#ffdcbb",
+              "inverse-surface": "#e2e2e2",
+              "inverse-primary": "#006688"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #000000; }
+        .text-muted-silver { color: #889299; }
+        .gt-tight { letter-spacing: -0.06em; line-height: 0.95; }
+        .glass-nav { background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(20px); }
+        .glow-ring { box-shadow: 0 0 30px rgba(58, 176, 226, 0.15); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="font-body text-on-background selection:bg-primary-container/30">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass-nav border-b border-outline-variant/15 shadow-[0_0_30px_rgba(58,176,226,0.06)] h-20 flex justify-between items-center px-12">
+<div class="flex items-center gap-12">
+<a class="flex items-center" href="index.html">
+<img alt="Edelleye Logo" class="h-6 md:h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0ugnv6VeVozpgDqo_8Epv-vAkdCxS0aHoo5AdvjYh21QEj6uIXKRoMH5hKcWXpgC-rXDo4ODdLiBX93qYi0K0UwRjeA9pl6WaHxdV6QCxRfoH8aTl0nL1aPJEczQZyP2qvDKvzAER-P_-k0IJc2ILM4el-uQqHdALiNrLd3mJZC1tP1rhaY7eSMmT2gxcd1eiGekDmw2LA90tXdlebTxZse1NarcZHPCnWCn1tv1ZEA2yEcaS0dxAftKozeGzk4LN1JTk7MdEbHx"/>
+</a>
+<div class="hidden md:flex gap-8">
+<a class="font-headline tracking-[-0.04em] uppercase text-[11px] font-bold text-white/60 hover:text-white transition-colors" href="index.html">Home</a>
+<a class="font-headline tracking-[-0.04em] uppercase text-[11px] font-bold text-white/60 hover:text-white transition-colors" href="offering.html">Offering</a>
+<a class="font-headline tracking-[-0.04em] uppercase text-[11px] font-bold text-white/60 hover:text-white transition-colors" href="portfolio.html">Portfolio</a>
+<a class="font-headline tracking-[-0.04em] uppercase text-[11px] font-bold text-white/60 hover:text-white transition-colors" href="pricing.html">Pricing</a>
+</div>
+</div>
+<button class="bg-white text-black px-6 py-2 rounded-full font-headline tracking-[-0.04em] uppercase text-[11px] font-bold hover:scale-95 active:scale-90 transition-transform">
+            Start Project
+        </button>
+</nav>
+<main class="relative pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex flex-col items-center justify-center px-6 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-50" data-alt="Close-up of a futuristic high-tech robotic face with glowing optical sensors" src="https://lh3.googleusercontent.com/aida/ADBb0uhFgic19j0wtOeJLG6AoCAUsoddkcbsn7HHR9XEXipXXXhi9rKX3X9Jo3gJ9dSP4ZEfP77NdNRY6dIdQOT9iyv6YW3GuOfsOJbs7dp-gFN67XcAgO-g6auQIiWotLUwC-gGWBm_fOOcF1ll_hQ1T14yNWWpw_J8QCAsV3oBpGBolQDk82Lmhn8zDBAv4pm2S_WJd8aU-xSxEaKQkRHoLRo1qnesDAWDC9LlQIrdO3Fe_MKNK4jmSrbmrpQXgz2DuXk3xRU0WrVWbQ"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto text-center">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low/80 backdrop-blur-md border border-outline-variant/15 mb-8">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label text-xs uppercase tracking-widest text-secondary font-semibold">Evolutionary Strategy</span>
+</div>
+<h1 class="font-headline font-extrabold text-[8vw] leading-none text-white gt-tight mb-8">
+                    GROWTH ENGINES <br/>
+<span class="text-primary">FOR THE DIGITAL ERA</span>
+</h1>
+<p class="max-w-2xl mx-auto text-muted-silver text-lg md:text-xl font-body leading-relaxed mb-12">
+                    We engineer obsidian-grade digital instruments for brands that demand precision. 
+                    Where data meets cinematic execution.
+                </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+<button class="bg-white text-black px-10 py-5 rounded-full font-headline font-bold text-sm tracking-tight glow-ring hover:scale-105 transition-all">
+                        EXPLORE THE LAB
+                    </button>
+<button class="flex items-center gap-3 px-8 py-4 rounded-full border border-outline-variant/30 font-headline font-bold text-sm text-primary hover:bg-white/5 transition-all">
+<span>VIEW REEL</span>
+<span class="material-symbols-outlined text-lg" data-icon="play_circle">play_circle</span>
+</button>
+</div>
+</div>
+<div class="absolute bottom-12 left-12 hidden lg:block">
+<div class="flex gap-4 items-center">
+<div class="w-12 h-[1px] bg-outline-variant/30"></div>
+<span class="text-white/40 text-[10px] font-label uppercase tracking-widest">SCROLL TO DISCOVER</span>
+</div>
+</div>
+</section>
+<!-- Bento Grid Insights -->
+<section class="py-32 px-12 bg-black">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-12 gap-6">
+<!-- Large Feature -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-low rounded-lg p-12 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8">
+<span class="text-secondary material-symbols-outlined text-4xl" data-icon="rocket_launch">rocket_launch</span>
+</div>
+<h2 class="text-4xl font-headline font-bold gt-tight text-white mb-6 max-w-md">Precision engineering for high-velocity brands.</h2>
+<p class="text-muted-silver max-w-sm mb-8">We don't just build websites; we construct modular ecosystems that scale with your ambitions.</p>
+<a class="text-primary font-bold inline-flex items-center gap-2 group-hover:gap-4 transition-all" href="#">
+                            Methodology <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Small Technical -->
+<div class="col-span-12 lg:col-span-4 bg-surface-container rounded-lg p-8 flex flex-col justify-between border border-primary/10">
+<div>
+<span class="text-[10px] font-label uppercase tracking-widest text-primary mb-4 block">Core Metric</span>
+<div class="text-6xl font-headline font-black text-white mb-2">99.8%</div>
+<div class="text-muted-silver text-sm">System Uptime &amp; Stability</div>
+</div>
+<div class="pt-8 border-t border-outline-variant/15 mt-8">
+<p class="text-xs text-white/40 leading-relaxed italic">"Performance is the only metric that survives the scrutiny of time."</p>
+</div>
+</div>
+<!-- Secondary Accent -->
+<div class="col-span-12 md:col-span-6 lg:col-span-4 bg-surface-container-high rounded-lg p-8">
+<div class="w-10 h-10 rounded-full bg-secondary-container/20 flex items-center justify-center mb-6">
+<span class="text-secondary material-symbols-outlined" data-icon="memory">memory</span>
+</div>
+<h3 class="text-xl font-headline font-bold text-white mb-3">AI Integration</h3>
+<p class="text-muted-silver text-sm">Custom neural solutions tailored for proprietary datasets and internal workflows.</p>
+</div>
+<div class="col-span-12 md:col-span-6 lg:col-span-8 bg-surface rounded-lg relative overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover opacity-30 grayscale" data-alt="Dark, moody architectural shot of a modern brutalist concrete building with sharp shadows and minimalist aesthetic" src="https://lh3.googleusercontent.com/aida/ADBb0uhOMoJlgmkBnbFEAecxwc_S6iAjjhVVGMbAua1liFxZ_s_WgikGrEw1g7CX17c2D4Aa4JavCWqqu2F1j6_A7R9bWQaSbA_RNkUVVHP8I4ncPsQLBcj11ITvZUUGAtTCUB-wxvh7poB2Fz-cJp2ya8Zs4oUcZci2W0SEVKUcTTbvngxIQ10MiOyLIyjv03rswZ8Zt7_vL6Wxp4gyT5wJPEsgez4KDS_uZsDrMRX45EsmINGtUq8MQf12u0MpK9gZpvHt2ozQY_VJSQ"/>
+<div class="relative z-10 p-12 h-full flex flex-col justify-end">
+<h3 class="text-3xl font-headline font-bold text-white">The Obsidian Philosophy</h3>
+<p class="text-white/60 max-w-sm mt-4">Why we believe pure black is the most expansive canvas for innovation.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-40 bg-black flex flex-col items-center justify-center text-center">
+<h2 class="text-6xl md:text-8xl font-headline font-black gt-tight text-white mb-12">READY TO <br/><span class="text-primary">ELEVATE?</span></h2>
+<button class="bg-white text-black px-16 py-6 rounded-full font-headline font-bold text-lg tracking-tight hover:bg-primary transition-colors">
+                START YOUR PROJECT
+            </button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full relative py-20 bg-black">
+<div class="max-w-7xl mx-auto px-12 flex flex-col md:flex-row justify-between border-t border-outline-variant/15 pt-12">
+<div class="mb-10 md:mb-0">
+<a class="flex items-center" href="index.html">
+<img alt="Edelleye Logo" class="h-6 w-auto object-contain brightness-125" src="https://lh3.googleusercontent.com/aida/ADBb0uhUc4w_oFZeay9rWkzUMSxGWC8ZyQpFMeECcyynlBDpvlChyu6QXwRjCm7FC21cZ3y7LN5lD3hylIYYIH8yT9ltv9d_Yx39o00uKtGa-P8esICdVBU6nKBKWgCylTxq1JR9Ddkipgp78SzKG_zheuypEM3Uo1XSAmsKhp-WPLsDxvjazeWTlqjrj_RjPRp5Oe9wgFgB18YhBUMvGwNl0P1bGBX2X9ruhvPljkjjdaNM0vKHJYIvfS5_VWCIullTS87ksz-xCfyNbQ"/>
+</a>
+<p class="mt-4 font-body text-[12px] tracking-wider text-white/40 max-w-xs">
+                    © 2026 Edelleye Digital. Built for the obsidian instrument.
+                </p>
+</div>
+<div class="flex flex-wrap gap-x-8 gap-y-4">
+<div class="flex flex-wrap gap-8 mr-8">
+<a class="font-body text-[12px] tracking-wider text-white/40 hover:text-primary transition-colors" href="index.html">Home</a>
+<a class="font-body text-[12px] tracking-wider text-white/40 hover:text-primary transition-colors" href="offering.html">Offering</a>
+<a class="font-body text-[12px] tracking-wider text-white/40 hover:text-primary transition-colors" href="portfolio.html">Portfolio</a>
+<a class="font-body text-[12px] tracking-wider text-white/40 hover:text-primary transition-colors" href="pricing.html">Pricing</a>
+</div>
+<div class="flex flex-wrap gap-8">
+<a class="font-body text-[12px] tracking-wider text-white/40 hover:text-primary transition-colors" href="#">LinkedIn</a>
+<a class="font-body text-[12px] tracking-wider text-white/40 hover:text-primary transition-colors" href="#">Bluesky</a>
+<a class="font-body text-[12px] tracking-wider text-white/40 hover:text-primary transition-colors" href="#">Facebook</a>
+<a class="font-body text-[12px] tracking-wider text-white/40 hover:text-primary transition-colors" href="#">Github</a>
+<a class="font-body text-[12px] tracking-wider text-white/40 hover:text-primary transition-colors" href="#">Clutch</a>
+<a class="font-body text-[12px] tracking-wider text-white/40 hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="font-body text-[12px] tracking-wider text-white/40 hover:text-primary transition-colors" href="#">Terms</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
