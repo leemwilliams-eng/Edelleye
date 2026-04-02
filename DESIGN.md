@@ -13,7 +13,7 @@ The visual identity is defined by a **Pure Black (#000000)** foundation, creatin
 
 ### Palette Implementation
 - **Primary (Turquoise/Blue - #75D1FF):** Reserved for the "Action Path." Used for primary interactive elements, active states, and glowing ring shadows that signify focus.
-- **Secondary (Orange - #FFB778):** Used as a surgical highlighter. This is for status badges, high-priority callouts, and specific "tool-tip" indicators that require immediate ocular attention.
+- **Secondary (Orange - #C8811A):** Used as a surgical highlighter. This is for status badges, high-priority callouts, and specific "tool-tip" indicators that require immediate ocular attention. Matches the Edelleye wordmark amber.
 - **Background (#000000):** The absolute base. No exceptions.
 
 ### The "No-Line" Rule
@@ -31,16 +31,20 @@ Traditional 1px solid borders are strictly prohibited for sectioning. They creat
 
 The tension between the headlines and the body text is what creates the "Cinematic" feel.
 
-- **Headlines (GT Walsheim):** Must use **extreme negative letter-spacing** (-0.05em to -0.08em). This creates a "tight," authoritative block of text that feels custom-fitted.
-- **Body & Labels (Inter):** Utilize extensive **OpenType features** (tnum, ss01, case). Use `body-md` for standard reading and `label-sm` for technical metadata. Inter’s neutrality provides the "functional" contrast to the expressive GT Walsheim.
+- **Headlines (Plus Jakarta Sans / GT Walsheim substitute):** Must use **negative letter-spacing** (-0.02em to -0.05em). This creates a "tight," authoritative block of text that feels custom-fitted.
+- **Body & Labels (Inter):** Utilize extensive **OpenType features** (tnum, ss01, case). Use `body-md` for standard reading and `label-sm` for technical metadata. Inter’s neutrality provides the "functional" contrast to the expressive headline face.
 
-| Level | Font Family | Size | Character Spacing |
-| :--- | :--- | :--- | :--- |
-| **Display-LG** | GT Walsheim | 3.5rem | -0.06em |
-| **Headline-MD** | GT Walsheim | 1.75rem | -0.04em |
-| **Title-SM** | Inter | 1.0rem | 0 |
-| **Body-MD** | Inter | 0.875rem | 0.01em |
-| **Label-SM** | Inter | 0.6875rem | 0.05em (Uppercase) |
+### Heading Hierarchy
+
+No H1 tags are used on any page. H2 is the top-level display heading. All hero/display headings use `text-4xl md:text-5xl` (36px / 48px) for legibility and controlled visual impact.
+
+| Level | HTML | Font Family | Size (Tailwind) | Character Spacing |
+| :--- | :--- | :--- | :--- | :--- |
+| **Display** | H2 | Plus Jakarta Sans | `text-4xl md:text-5xl` | -0.02em |
+| **Section** | H2 | Plus Jakarta Sans | `text-3xl` | -0.02em |
+| **Sub-section** | H3 | Plus Jakarta Sans | `text-xl` | 0 |
+| **Body-MD** | p | Inter | `text-base` (0.875rem) | 0.01em |
+| **Label-SM** | span | Inter | `text-[10px]–text-[12px]` | 0.05em (Uppercase) |
 
 ---
 
@@ -66,7 +70,7 @@ We do not use drop shadows to indicate "height"; we use **Light and Layering**.
 - **Nesting:** An inner card should always be one tier higher in the `surface-container` scale than its parent container.
 
 ### Interactive Elements
-- **Chips:** Small, pill-shaped. Use `secondary` (#FFB778) for selection highlights to provide a "tool-obsessed" contrast against the blue primary path.
+- **Chips:** Small, pill-shaped. Use `secondary` (#C8811A) for selection highlights to provide a "tool-obsessed" contrast against the blue primary path.
 - **Inputs:** Darker than the surface. `surface-container-lowest` for the field background. On focus, the field receives a 1px `primary` glow ring (not a solid border).
 - **Tooltips:** Use `surface-bright` with `on-surface` text. They should appear with a slight "zoom-in" motion to reinforce the cinematic feel.
 
