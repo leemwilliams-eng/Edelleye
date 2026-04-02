@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-container": "#ffdec5",
+              "surface": "#131313",
+              "tertiary": "#ffb869",
+              "outline-variant": "#3e484f",
+              "on-secondary-fixed-variant": "#6c3a00",
+              "tertiary-fixed-dim": "#ffb869",
+              "primary-fixed": "#c2e8ff",
+              "primary": "#75d1ff",
+              "outline": "#889299",
+              "on-tertiary-fixed": "#2b1700",
+              "tertiary-container": "#e29432",
+              "primary-container": "#3ab0e2",
+              "inverse-on-surface": "#303030",
+              "background": "#131313",
+              "on-tertiary": "#482900",
+              "on-primary": "#003548",
+              "secondary-fixed-dim": "#ffb778",
+              "surface-container-lowest": "#0e0e0e",
+              "surface-container-high": "#2a2a2a",
+              "on-surface-variant": "#bdc8d0",
+              "secondary-fixed": "#ffdcc1",
+              "surface-dim": "#131313",
+              "on-error-container": "#ffdad6",
+              "surface-tint": "#75d1ff",
+              "surface-container-low": "#1b1b1b",
+              "surface-container": "#1f1f1f",
+              "secondary": "#ffb778",
+              "on-primary-fixed": "#001e2b",
+              "on-tertiary-container": "#573200",
+              "on-error": "#690005",
+              "on-background": "#e2e2e2",
+              "surface-variant": "#353535",
+              "on-secondary": "#4c2700",
+              "surface-container-highest": "#353535",
+              "on-primary-container": "#004056",
+              "error-container": "#93000a",
+              "error": "#ffb4ab",
+              "on-surface": "#e2e2e2",
+              "on-secondary-fixed": "#2e1500",
+              "secondary-container": "#995400",
+              "primary-fixed-dim": "#75d1ff",
+              "on-primary-fixed-variant": "#004d67",
+              "surface-bright": "#393939",
+              "on-tertiary-fixed-variant": "#673d00",
+              "tertiary-fixed": "#ffdcbb",
+              "inverse-surface": "#e2e2e2",
+              "inverse-primary": "#006688"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #000000; color: #e2e2e2; }
+        .gt-walsheim { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; letter-spacing: -0.06em; }
+        .inter-technical { font-family: 'Inter', sans-serif; font-feature-settings: "tnum" on, "ss01" on, "case" on; }
+        .glass-panel { background: rgba(19, 19, 19, 0.7); backdrop-filter: blur(40px); }
+        .primary-glow { box-shadow: 0 0 30px rgba(117, 209, 255, 0.06); }
+        .blue-ring { box-shadow: inset 0 0 0 1px rgba(117, 209, 255, 0.15), 0 0 20px rgba(117, 209, 255, 0.05); }
+    </style>
+</head>
+<body class="inter-technical selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-black/40 backdrop-blur-xl flex justify-between items-center px-12 h-20 border-b border-[#3E484F]/15 shadow-[0_0_30px_rgba(117,209,255,0.06)]">
+<a class="h-6" href="index.html">
+<img alt="Edelleye" class="h-full object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0uhUc4w_oFZeay9rWkzUMSxGWC8ZyQpFMeECcyynlBDpvlChyu6QXwRjCm7FC21cZ3y7LN5lD3hylIYYIH8yT9ltv9d_Yx39o00uKtGa-P8esICdVBU6nKBKWgCylTxq1JR9Ddkipgp78SzKG_zheuypEM3Uo1XSAmsKhp-WPLsDxvjazeWTlqjrj_RjPRp5Oe9wgFgB18YhBUMvGwNl0P1bGBX2X9ruhvPljkjjdaNM0vKHJYIvfS5_VWCIullTS87ksz-xCfyNbQ"/>
+</a>
+<div class="hidden md:flex items-center space-x-10">
+<a class="font-['Plus_Jakarta_Sans'] tracking-[-0.04em] uppercase text-[11px] font-bold text-white/60 hover:text-white transition-colors" href="index.html">Home</a>
+<a class="font-['Plus_Jakarta_Sans'] tracking-[-0.04em] uppercase text-[11px] font-bold text-[#75D1FF] border-b border-[#75D1FF] pb-1" href="offering.html">Offering</a>
+<a class="font-['Plus_Jakarta_Sans'] tracking-[-0.04em] uppercase text-[11px] font-bold text-white/60 hover:text-white transition-colors" href="portfolio.html">Portfolio</a>
+<a class="font-['Plus_Jakarta_Sans'] tracking-[-0.04em] uppercase text-[11px] font-bold text-white/60 hover:text-white transition-colors" href="pricing.html">Pricing</a>
+</div>
+<button class="bg-primary-container text-on-primary-container rounded-full px-6 py-2.5 text-[11px] font-bold tracking-tight hover:shadow-[0_0_20px_rgba(117,209,255,0.4)] transition-all duration-300 active:scale-95">
+            Start Project
+        </button>
+</nav>
+<main class="relative pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center overflow-hidden px-12">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent z-10"></div>
+<img alt="Synthetic Intelligence" class="w-full h-full object-cover object-right" src="https://lh3.googleusercontent.com/aida/ADBb0ui3J6nnEiR_NftO2fE8kOfUBqa18_bGSFPUJ-DQ8rB1DS8MesM4Yx48V89z254uE82yRxtWSz7Ktv53HOlAo2V2VpU2bRJATKeYpqjhjsTZ3_iBfQpPxhRjacHqY2oQVAOGK2iExkIfRDD0HD8pHJK0k_AVKvR5bY-Y0Q6Fr3dLkIjYrvZANyoMuawEC20ax7oz3ZV0E9ux26HPApuEoTrglW9IF2MUISH0ljZyzr7NgosIWyiV-BMLbujtJf6CpvhQX69_tX2a"/>
+</div>
+<div class="relative z-20 max-w-4xl">
+<div class="inline-flex items-center gap-2 mb-6 px-3 py-1 rounded-full bg-surface-container-low border border-outline-variant/15">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="text-[10px] font-bold tracking-[0.1em] uppercase text-secondary">Advanced Offering</span>
+</div>
+<h1 class="gt-walsheim text-[7rem] leading-[0.85] text-white mb-8">
+                    Algorithmic<br/>Growth
+                </h1>
+<p class="text-on-surface-variant text-xl max-w-xl leading-relaxed mb-10 inter-technical">
+                    The obsidian instrument for high-frequency market expansion. Leveraging neural-driven acquisition to scale products at surgical precision.
+                </p>
+<div class="flex items-center gap-6">
+<button class="rounded-full bg-primary py-4 px-10 text-on-primary font-bold tracking-tight hover:shadow-[0_0_30px_rgba(117,209,255,0.3)] transition-all">
+                        Initiate Protocol
+                    </button>
+<div class="flex flex-col">
+<span class="text-[10px] uppercase tracking-widest text-secondary font-bold">Efficiency Rating</span>
+<span class="text-2xl font-mono text-white">99.98%</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Feature Bento Grid -->
+<section class="py-32 px-12 bg-black">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-12 gap-6">
+<!-- Feature 1: Synthetic Targeting -->
+<div class="col-span-12 md:col-span-8 group">
+<div class="relative h-[500px] rounded-lg overflow-hidden glass-panel blue-ring p-12 flex flex-col justify-between">
+<div class="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-40 transition-opacity">
+<span class="material-symbols-outlined text-[120px] text-primary" data-icon="target">target</span>
+</div>
+<div class="relative z-10">
+<h3 class="gt-walsheim text-4xl text-white mb-4">Synthetic Targeting</h3>
+<p class="text-on-surface-variant text-lg max-w-md inter-technical">
+                                    Our proprietary neural engines map consumer behavioral patterns to create surgical lookalike models that outperform traditional platform algorithms.
+                                </p>
+</div>
+<div class="mt-auto grid grid-cols-3 gap-8">
+<div>
+<span class="block text-[10px] uppercase tracking-widest text-primary mb-1">Precision</span>
+<span class="text-xl font-bold text-white">0.02ms</span>
+</div>
+<div>
+<span class="block text-[10px] uppercase tracking-widest text-primary mb-1">Accuracy</span>
+<span class="text-xl font-bold text-white">94.8%</span>
+</div>
+<div>
+<span class="block text-[10px] uppercase tracking-widest text-primary mb-1">Reach</span>
+<span class="text-xl font-bold text-white">Global</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Feature 2: Algorithmic Scaling -->
+<div class="col-span-12 md:col-span-4">
+<div class="h-[500px] rounded-lg bg-surface-container-low border border-outline-variant/15 p-12 flex flex-col">
+<div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-secondary" data-icon="trending_up">trending_up</span>
+</div>
+<h3 class="gt-walsheim text-3xl text-white mb-4">Algorithmic Scaling</h3>
+<p class="text-on-surface-variant inter-technical mb-12">
+                                Dynamic budget allocation across multi-channel environments to ensure zero waste.
+                            </p>
+<div class="mt-auto overflow-hidden rounded-lg border border-primary/20">
+<img alt="Technical Interface" class="w-full h-40 object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ug86c1viFOQJ3GxfpS2NuUxxxNKfLSEb4G98SmQhoJEfyBilprpmlGCldjtt4FErpKGf5IlOCUFppDTKE3asHZuYEWgXqyFhoXcZ7CgZpqg7r04nB1ANDp3vIhzuwSG0QRvOBJbWP1JQUx18KfI9pRbUTRroksjJG9Imn09eUma-P4XUtjdvnfOq_9trOobUyjANuFCbvUm5FcEuCBDy2B2NAg-7RPNDSAjnW7i1Y94JOkTddw_H_3dL4Hw48EVYCv0L8AGjZ3QRw"/>
+</div>
+</div>
+</div>
+<!-- Feature 3: Neural Retention -->
+<div class="col-span-12 md:col-span-5">
+<div class="h-[450px] rounded-lg bg-surface-container border border-outline-variant/15 p-12 flex flex-col justify-center text-center">
+<span class="material-symbols-outlined text-5xl text-primary mb-6 mx-auto" data-icon="psychology">psychology</span>
+<h3 class="gt-walsheim text-3xl text-white mb-4">Neural Retention</h3>
+<p class="text-on-surface-variant inter-technical">
+                                Predictive churn modeling and automated re-engagement protocols designed to maximize the LTV of every acquired node.
+                            </p>
+</div>
+</div>
+<!-- Visual Technical Showcase -->
+<div class="col-span-12 md:col-span-7">
+<div class="h-[450px] rounded-lg overflow-hidden glass-panel blue-ring relative flex items-center justify-center">
+<div class="absolute inset-0 opacity-40">
+<img alt="Node Visualization" class="w-full h-full object-cover" data-alt="Abstract network of interconnected nodes and data points in glowing turquoise over a pure black background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZdGJBUbU_k_6b0NeFUzqfm_TgxT1AUlGqW-bpshvT5cqT_unzLW6wuXByWFBKvCvxbJv3OVXxqpJc8r5LAhFRpnd8mrW6_xazfhN_4RRlooERkeC3CUXwN4eOIVVieW3bEnj-JgwKyGEgZWCxSC5NsjGX4kK1_Q6NpOQndkekPKESyq4Fv7LZzPp9oT6fA-V7q-YOaKB6p83huzgAANMRH4lzwkACiqOiSvPr35TX5-_K5MdctZgDxwWqyU8MG3cGHJTAxXJf8Uc"/>
+</div>
+<div class="relative z-10 glass-panel border border-primary/30 p-8 rounded-lg max-w-sm text-center">
+<div class="text-primary font-mono text-sm mb-2">SCANNING PARAMETERS...</div>
+<div class="w-full bg-primary/10 h-1 rounded-full mb-4 overflow-hidden">
+<div class="bg-primary h-full w-3/4"></div>
+</div>
+<div class="text-white font-bold text-lg">SYSTEMS OPTIMIZED</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Interface Section -->
+<section class="py-24 px-12 bg-[#080808]">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-20">
+<div class="w-full md:w-1/2">
+<h2 class="gt-walsheim text-5xl text-white mb-8 leading-tight">The Precision of <br/><span class="text-primary">Optical Control</span></h2>
+<ul class="space-y-8">
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-secondary mt-1" data-icon="terminal">terminal</span>
+<div>
+<h4 class="font-bold text-white">Full-Stack Automation</h4>
+<p class="text-on-surface-variant text-sm inter-technical">End-to-end execution from creative generation to media placement.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-secondary mt-1" data-icon="memory">memory</span>
+<div>
+<h4 class="font-bold text-white">Quantum Processing</h4>
+<p class="text-on-surface-variant text-sm inter-technical">Real-time data digestion across 140+ unique market signals.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="w-full md:w-1/2">
+<div class="relative">
+<div class="absolute -inset-10 bg-primary/5 rounded-full blur-3xl"></div>
+<img alt="Interface Screenshot" class="relative rounded-lg shadow-2xl border border-outline-variant/30 primary-glow" data-alt="Sleek dark mode software interface with complex data visualizations, circular graphs, and turquoise neon highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRuATcQiKcClAr7-nKuJ6fHOjxYluaytVOVdDgaF2aauaGeN8tWxn-Z7FvdV7scH1L9WQgRpb_zRJbskq_rVS6SmikuBnuHoTAyELr9hksZcEKdod45UzvKj5ZQGzcPPayihTQP-0Nx0IKXcGzuLfMuLVZL9-gi9aTBj5yepGNAWg4Fj5N0ufA6FnhanuQvcePVZQkdnWLORldwda4eapU7mF_WGOIDeV5nMEE0XXLyazRnFuqQY004YlDTQ4hrrn1oSTuzvGg_mI"/>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-40 px-12 relative overflow-hidden">
+<div class="max-w-4xl mx-auto text-center relative z-10">
+<h2 class="gt-walsheim text-7xl text-white mb-12">Scale beyond human <span class="text-secondary">capacity.</span></h2>
+<button class="rounded-full bg-primary py-6 px-16 text-on-primary font-bold text-lg tracking-tight hover:shadow-[0_0_50px_rgba(117,209,255,0.4)] transition-all">
+                    Access Edelleye Pipeline
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#000000] w-full relative py-20">
+<div class="max-w-7xl mx-auto px-12 flex flex-col md:flex-row justify-between border-t border-[#3E484F]/15 pt-12">
+<div class="mb-8 md:mb-0">
+<a class="h-6 mb-4 block" href="index.html">
+<img alt="Edelleye" class="h-full object-contain brightness-110" src="https://lh3.googleusercontent.com/aida/ADBb0ugnv6VeVozpgDqo_8Epv-vAkdCxS0aHoo5AdvjYh21QEj6uIXKRoMH5hKcWXpgC-rXDo4ODdLiBX93qYi0K0UwRjeA9pl6WaHxdV6QCxRfoH8aTl0nL1aPJEczQZyP2qvDKvzAER-P_-k0IJc2ILM4el-uQqHdALiNrLd3mJZC1tP1rhaY7eSMmT2gxcd1eiGekDmw2LA90tXdlebTxZse1NarcZHPCnWCn1tv1ZEA2yEcaS0dxAftKozeGzk4LN1JTk7MdEbHx"/>
+</a>
+<p class="font-['Inter'] text-[12px] tracking-wider text-white/40 max-w-xs">© 2026 Edelleye Digital. Built for the obsidian instrument.</p>
+</div>
+<div class="flex gap-12">
+<div class="flex flex-col gap-4">
+<span class="text-white text-[11px] font-bold uppercase tracking-widest mb-2">Nav</span>
+<a class="font-['Inter'] text-[12px] tracking-wider text-white/40 hover:text-[#75D1FF] transition-opacity" href="index.html">Home</a>
+<a class="font-['Inter'] text-[12px] tracking-wider text-white/40 hover:text-[#75D1FF] transition-opacity" href="offering.html">Offering</a>
+<a class="font-['Inter'] text-[12px] tracking-wider text-white/40 hover:text-[#75D1FF] transition-opacity" href="portfolio.html">Portfolio</a>
+<a class="font-['Inter'] text-[12px] tracking-wider text-white/40 hover:text-[#75D1FF] transition-opacity" href="pricing.html">Pricing</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="text-white text-[11px] font-bold uppercase tracking-widest mb-2">Connect</span>
+<a class="font-['Inter'] text-[12px] tracking-wider text-white/40 hover:text-[#75D1FF] transition-opacity" href="#">LinkedIn</a>
+<a class="font-['Inter'] text-[12px] tracking-wider text-white/40 hover:text-[#75D1FF] transition-opacity" href="#">Bluesky</a>
+<a class="font-['Inter'] text-[12px] tracking-wider text-white/40 hover:text-[#75D1FF] transition-opacity" href="#">Facebook</a>
+<a class="font-['Inter'] text-[12px] tracking-wider text-white/40 hover:text-[#75D1FF] transition-opacity" href="#">Github</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="text-white text-[11px] font-bold uppercase tracking-widest mb-2">System</span>
+<a class="font-['Inter'] text-[12px] tracking-wider text-white/40 hover:text-[#75D1FF] transition-opacity" href="#">Privacy</a>
+<a class="font-['Inter'] text-[12px] tracking-wider text-white/40 hover:text-[#75D1FF] transition-opacity" href="#">Terms</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
