@@ -105,11 +105,22 @@
 <a class="font-headline tracking-[-0.02em] uppercase text-[11px] font-bold text-white/60 hover:text-white transition-colors" href="portfolio.html">Portfolio</a>
 <a class="font-headline tracking-[-0.02em] uppercase text-[11px] font-bold text-white/60 hover:text-white transition-colors" href="pricing.html">Pricing</a>
 </div>
-<button class="bg-primary hover:bg-primary-container text-on-primary px-6 py-2.5 rounded-full font-headline tracking-[-0.02em] uppercase text-[11px] font-extrabold transition-all duration-300 scale-95 active:scale-90">
-                Start Project
-            </button>
+<button id="mobile-menu-btn" class="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.5 focus:outline-none" onclick="toggleMobileMenu()" aria-label="Toggle navigation">
+  <span class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+  <span class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+  <span class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+</button>
+<button class="hidden md:block bg-primary hover:bg-primary-container text-on-primary px-6 py-2.5 rounded-full font-headline tracking-[-0.02em] uppercase text-[11px] font-extrabold transition-all duration-300 scale-95 active:scale-90">Start Project</button>
 </div>
 </nav>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="fixed top-20 left-0 w-full z-40 bg-black/95 backdrop-blur-xl border-b border-[#3E484F]/15 flex-col px-8 py-6 gap-6 md:hidden" style="display:none">
+  <a class="font-headline tracking-[-0.02em] uppercase text-[11px] font-bold text-white/60 hover:text-white transition-colors" href="index.html">Home</a>
+  <a class="font-headline tracking-[-0.02em] uppercase text-[11px] font-bold text-white/60 hover:text-white transition-colors" href="offering.html">Offering</a>
+  <a class="font-headline tracking-[-0.02em] uppercase text-[11px] font-bold text-white/60 hover:text-white transition-colors" href="portfolio.html">Portfolio</a>
+  <a class="font-headline tracking-[-0.02em] uppercase text-[11px] font-bold text-white/60 hover:text-white transition-colors" href="pricing.html">Pricing</a>
+  <button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-headline tracking-[-0.02em] uppercase text-[11px] font-extrabold w-full mt-2">Start Project</button>
+</div>
 <main class="pt-32 pb-0">
 <!-- Hero Section -->
 <section class="max-w-7xl mx-auto px-12 mb-24">
@@ -301,7 +312,7 @@
 <a class="mb-4 block hover:opacity-80 transition-opacity" href="index.html">
 <img alt="Edelleye Digital" class="h-8 object-contain brightness-110" src="https://lh3.googleusercontent.com/aida/ADBb0ugnv6VeVozpgDqo_8Epv-vAkdCxS0aHoo5AdvjYh21QEj6uIXKRoMH5hKcWXpgC-rXDo4ODdLiBX93qYi0K0UwRjeA9pl6WaHxdV6QCxRfoH8aTl0nL1aPJEczQZyP2qvDKvzAER-P_-k0IJc2ILM4el-uQqHdALiNrLd3mJZC1tP1rhaY7eSMmT2gxcd1eiGekDmw2LA90tXdlebTxZse1NarcZHPCnWCn1tv1ZEA2yEcaS0dxAftKozeGzk4LN1JTk7MdEbHx"/>
 </a>
-<p class="font-['Inter'] text-[12px] tracking-wider text-white/40 max-w-xs">Edelleye Digital: The Obsidian Instrument for Brand Transformation. High-contrast precision for global leaders.</p>
+<p class="font-['Inter'] text-[12px] tracking-wider text-white/40 max-w-xs">Edelleye is the instrument for brand transformation and revenue growth. The best option for leading companies who want to get to the next level.</p>
 </div>
 <div class="grid grid-cols-2 md:grid-cols-3 gap-16">
 <div>
@@ -337,4 +348,10 @@
             </p>
 </div>
 </footer>
+<script>
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobile-menu');
+  menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
+}
+</script>
 </body></html>
