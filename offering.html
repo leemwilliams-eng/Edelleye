@@ -91,94 +91,70 @@
         .inter-technical { font-family: 'Inter', sans-serif; font-feature-settings: "tnum" on, "ss01" on, "case" on; }
         html { scroll-behavior: smooth; scroll-padding-top: 100px; }
 
-        /* Service Cards Grid */
-        .service-cards-grid {
+        /* Bento Matrix Grid */
+        .bento-grid {
           display: grid;
-          gap: 3rem;
+          grid-template-columns: repeat(12, 1fr);
+          gap: 1.5rem;
         }
 
-        .service-card {
-          display: grid;
-          grid-template-columns: 2fr 1fr;
-          gap: 2rem;
-          align-items: start;
+        .bento-item {
+          position: relative;
+          overflow: hidden;
+          background-color: #1b1b1b; /* surface-container-low */
+          border-radius: 1rem;
+          transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .service-card:nth-child(even) {
-          direction: rtl;
+        .bento-item:hover {
+          transform: translateY(-4px);
         }
 
-        .service-card:nth-child(even) > * {
-          direction: ltr;
+        .bento-image-layer {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          filter: grayscale(100%);
+          opacity: 0.2;
+          transition: filter 0.7s ease, opacity 0.7s ease, transform 0.7s ease;
+          pointer-events: none;
         }
 
-        .service-card-left {
+        .bento-item:hover .bento-image-layer {
+          filter: grayscale(0%);
+          opacity: 0.4;
+          transform: scale(1.05);
+        }
+
+        .bento-content {
+          position: relative;
+          z-index: 10;
+          height: 100%;
           display: flex;
           flex-direction: column;
-          justify-content: flex-start;
+          justify-content: space-between;
+          padding: 2.5rem;
         }
 
-        .service-card-right {
-          background-color: #1b1b1b;
-          border-left: 4px solid #75d1ff;
-          border-radius: 8px;
-          padding: 24px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-          height: fit-content;
-        }
-
-        .service-card-right svg {
-          width: 48px;
-          height: 48px;
-          margin-bottom: 16px;
-        }
-
-        .concept-icon {
-          stroke: #C8811A;
-          fill: none;
-          stroke-width: 2;
-          stroke-linecap: round;
-          stroke-linejoin: round;
+        .key-concept-badge {
+          display: inline-block;
+          font-size: 10px;
+          font-weight: 800;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: #75d1ff;
+          margin-bottom: 0.5rem;
         }
 
         @media (max-width: 1023px) {
-          .service-card {
+          .bento-grid {
             grid-template-columns: 1fr;
-            gap: 1.5rem;
           }
-
-          .service-card:nth-child(even) {
-            direction: ltr;
+          .col-span-8, .col-span-4 {
+            grid-column: span 1 / span 1 !important;
           }
-
-          .service-card-right {
-            margin-top: 1rem;
-          }
-        }
-
-        @media (max-width: 767px) {
-          .service-cards-grid {
-            gap: 2rem;
-          }
-
-          .service-card-right {
-            padding: 20px;
-          }
-        }
-
-        .partner-badge {
-          display: inline-flex;
-          align-items: center;
-          gap: 0.5rem;
-          font-size: 0.875rem;
-          padding: 0.5rem 1rem;
-          background-color: rgba(117, 209, 255, 0.05);
-          border-radius: 4px;
-          margin-right: 0.5rem;
-          margin-bottom: 0.5rem;
         }
 </style>
     <!-- Calendly link widget begin -->
@@ -233,7 +209,7 @@ Strategic partnerships that build execution capacity, compress timelines, and mo
 <div class="grid grid-cols-12 gap-12">
 <div class="col-span-12 md:col-span-7 border-l-4 border-primary pl-12 flex flex-col justify-center">
 <h2 class="text-3xl font-headline font-bold text-white mb-4 gt-headline">We don't solve the problem you think you have.</h2>
-<p class="text-on-surface-variant text-base leading-relaxed max-w-2xl">We find the problem you can't see yet. Then we methodically reveal the specific focus needed, and create execution targets. For 30 years, we've rebuilt revenue engines in every market model using cloud architecture, intelligent systems, and data-driven strategies.</p>
+<p class="text-on-surface-variant text-base leading-relaxed max-w-2xl">We find the problem you can't see yet. Then we methodically reveal the specific focus needed, and create execution targets.</p>
 </div>
 <div class="col-span-12 md:col-span-5 bg-surface-container-low rounded-lg p-8 border border-outline-variant/15">
 <h3 class="font-headline font-bold text-xl text-white mb-4">Real Case Study: Nomadz</h3>
@@ -298,132 +274,120 @@ To achieve market placement, we use design and creative, strategy and acquisitio
 </div>
 </section>
 
-<!-- Service Cards Section -->
+<!-- Service Grid Section (Bento Matrix) -->
 <section class="max-w-7xl mx-auto px-12 mb-32">
-<div class="service-cards-grid">
+<div class="bento-grid">
+  <!-- Card 1: Marketing & Advertising (8/12) -->
+  <div class="bento-item col-span-8">
+    <img src="Edelleye Lead Image 02.png" alt="Strategic Campaigns" class="bento-image-layer">
+    <div class="bento-content">
+      <div class="flex justify-between items-start">
+        <div class="space-y-4 max-w-lg">
+          <span class="key-concept-badge">Marketing & Advertising</span>
+          <h3 class="font-headline text-3xl font-bold text-white gt-headline">Strategic Campaigns That Move Revenue</h3>
+          <p class="text-on-surface-variant text-sm">We don't just place ads. We run campaigns that connect your message to the right audience at the right time. Clients see 32% average revenue increase through targeted execution.</p>
+        </div>
+        <div class="text-right flex flex-col gap-2">
+          <span class="text-[10px] font-mono text-primary/60">GOOGLE PARTNER (85/100)</span>
+          <span class="text-[10px] font-mono text-primary/60">AMAZON PARTNER (95/100)</span>
+          <span class="text-[10px] font-mono text-primary/60">FB PARTNER (80/100)</span>
+        </div>
+      </div>
+      <div class="mt-8 border-l-2 border-primary pl-6">
+        <span class="text-[10px] font-mono text-primary uppercase tracking-widest">Key Concept</span>
+        <div class="text-xl font-headline font-bold text-white">Algorithmic Targeting</div>
+        <div class="text-xs text-outline-variant mt-1">Precision at scale</div>
+      </div>
+    </div>
+  </div>
 
-<!-- Card 1: Marketing & Advertising -->
-<div class="service-card">
-<div class="service-card-left">
-<h3 class="font-headline text-2xl font-bold text-white mb-6">Strategic Campaigns That Move Revenue</h3>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="partner-badge">Google Cloud Partner (85/100)</span>
-<span class="partner-badge">Amazon Partner Network (95/100)</span>
-<span class="partner-badge">Facebook Marketing Partner (80/100)</span>
-<span class="partner-badge">LinkedIn Audience Network (90/100)</span>
-</div>
-<p class="text-on-surface-variant mb-6">
-We don't just place ads. We run campaigns that connect your message to the right audience at the right time. Social content calendars. Outreach campaigns that move cold to warm to customer. Growth trajectory campaigns that scale month over month. Market development into new verticals. Product ownership — knowing what to promote, when, and why.
-</p>
-<p class="text-primary font-semibold mb-6">
-Real numbers: Clients see 32% average revenue increase through targeted campaigns and conversion optimization.
-</p>
-</div>
-<div class="service-card-right">
-<svg class="concept-icon" viewBox="0 0 48 48">
-<circle cx="24" cy="24" r="16"/>
-<circle cx="24" cy="24" r="10"/>
-<circle cx="24" cy="24" r="4"/>
-<line x1="24" y1="8" x2="24" y2="2"/>
-<line x1="24" y1="46" x2="24" y2="40"/>
-<line x1="8" y1="24" x2="2" y2="24"/>
-<line x1="46" y1="24" x2="40" y2="24"/>
-</svg>
-<h4 class="font-bold text-white text-sm mb-1">Algorithmic Targeting</h4>
-<p class="text-on-surface-variant text-xs">Precision at scale</p>
-</div>
-</div>
+  <!-- Card 2: Strategy & Acquisition (4/12) -->
+  <div class="bento-item col-span-4 bg-surface-container-high">
+    <div class="bento-content">
+      <div class="space-y-4">
+        <span class="key-concept-badge">Strategy</span>
+        <h3 class="font-headline text-2xl font-bold text-white">Roadmaps, M&A, Growth</h3>
+        <p class="text-on-surface-variant text-xs mb-4">Strategic guidance on decisions that define company trajectory. $8M ARR (ET Water), $1.2B+ acquisitions (Palm IP).</p>
+        <div class="pt-4 border-t border-outline-variant/15">
+            <span class="text-primary font-mono text-2xl font-black">$1.2B+</span>
+            <div class="text-[10px] text-outline-variant uppercase">Record Acquisition</div>
+        </div>
+      </div>
+      <div class="mt-8 border-l-2 border-secondary pl-6">
+        <span class="text-[10px] font-mono text-secondary uppercase tracking-widest">Focus</span>
+        <div class="text-base font-headline font-bold text-white">Strategic Positioning</div>
+        <div class="text-xs text-outline-variant mt-1">Decisions that move needles</div>
+      </div>
+    </div>
+  </div>
 
-<!-- Card 2: Software Development -->
-<div class="service-card">
-<div class="service-card-left">
-<h3 class="font-headline text-2xl font-bold text-white mb-6">Build Systems That Scale</h3>
-<p class="text-on-surface-variant mb-6">
-From infrastructure to intelligent agents, we architect platforms built to grow. Full-stack development. Cloud architecture (AWS, GCP, cloud-native design). Microservices and containerized systems. AI and intelligent agent integration (Claude, ChatGPT, MCPs). DevOps pipelines and deployment automation. Platform scaling — from concept to millions of users.
-</p>
-<p class="text-primary font-semibold mb-6">
-Real numbers: Reduced time-to-market by 40% for clients. Built cloud-native platforms serving 100M+ users at Nokia, 30M+ at Palm. ET Water: took a hardware irrigation company from $0 to $8M ARR in 24 months with a cloud-based IoT platform. Current AI integrations with Anthropic Claude and advanced agent orchestration.
-</p>
-</div>
-<div class="service-card-right">
-<svg class="concept-icon" viewBox="0 0 48 48">
-<rect x="12" y="8" width="24" height="32" rx="2"/>
-<line x1="16" y1="14" x2="32" y2="14"/>
-<line x1="16" y1="22" x2="32" y2="22"/>
-<line x1="16" y1="30" x2="32" y2="30"/>
-<circle cx="24" cy="38" r="2"/>
-</svg>
-<h4 class="font-bold text-white text-sm mb-1">Cloud-Native Architecture</h4>
-<p class="text-on-surface-variant text-xs">Systems that grow</p>
-</div>
-</div>
+  <!-- Card 3: Software & AI (4/12) -->
+  <div class="bento-item col-span-4 border border-primary/10">
+    <img src="Edelleye-Cloud.png" alt="Cloud Systems" class="bento-image-layer">
+    <div class="bento-content">
+      <div class="space-y-4">
+        <span class="key-concept-badge">Systems</span>
+        <h3 class="font-headline text-2xl font-bold text-white">Build Systems That Scale</h3>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="text-[9px] font-mono bg-black/40 px-2 py-1 rounded border border-primary/20 text-primary">AWS/GCP</span>
+          <span class="text-[9px] font-mono bg-black/40 px-2 py-1 rounded border border-primary/20 text-primary">AI / CLAUDE</span>
+          <span class="text-[9px] font-mono bg-black/40 px-2 py-1 rounded border border-primary/20 text-primary">DEVOPS</span>
+          <span class="text-[9px] font-mono bg-black/40 px-2 py-1 rounded border border-primary/20 text-primary">MCP AGENTS</span>
+        </div>
+      </div>
+      <div class="mt-8 border-l-2 border-primary pl-6">
+        <span class="text-[10px] font-mono text-primary uppercase tracking-widest">Engine</span>
+        <div class="text-base font-headline font-bold text-white">Cloud-Native Architecture</div>
+        <div class="text-xs text-outline-variant mt-1">Systems that grow</div>
+      </div>
+    </div>
+  </div>
 
-<!-- Card 3: Strategy & Acquisition -->
-<div class="service-card">
-<div class="service-card-left">
-<h3 class="font-headline text-2xl font-bold text-white mb-6">Roadmaps, M&A, Revenue Growth</h3>
-<p class="text-on-surface-variant mb-6">
-Strategic guidance on the decisions that define your company. Roadmaps that matter — quarterly through 5-year. Revenue growth strategy. M&A evaluation and negotiation. Partnership development. Ecosystem strategy. Affiliate programs and revenue models.
-</p>
-<p class="text-primary font-semibold mb-6">
-Real numbers: Companies we've advised achieved $8M ARR (ET Water), maintained 40% global market share (Nokia), and successfully exited through $1.2B+ acquisitions (Palm IP to HP).
-</p>
-</div>
-<div class="service-card-right">
-<svg class="concept-icon" viewBox="0 0 48 48">
-<circle cx="24" cy="24" r="8"/>
-<path d="M 24 16 L 28 28 L 20 28 Z"/>
-<line x1="24" y1="24" x2="24" y2="32"/>
-</svg>
-<h4 class="font-bold text-white text-sm mb-1">Strategic Positioning</h4>
-<p class="text-on-surface-variant text-xs">Decisions that move needles</p>
-</div>
-</div>
+  <!-- Card 4: Design Services (8/12) -->
+  <div class="bento-item col-span-8">
+    <img src="Edelleye Services Image.png" alt="Design Systems" class="bento-image-layer">
+    <div class="bento-content">
+      <div class="flex justify-between items-end">
+        <div class="space-y-4 max-w-md">
+          <span class="key-concept-badge">Design</span>
+          <h3 class="font-headline text-3xl font-bold text-white gt-headline">Visual Identity & Creative Direction</h3>
+          <p class="text-on-surface-variant text-sm italic">"Design isn't decoration. It's strategy."</p>
+        </div>
+        <div class="text-right">
+            <div class="text-4xl font-headline font-black text-white">100M+</div>
+            <div class="text-[10px] text-outline-variant uppercase">Active Users Served</div>
+        </div>
+      </div>
+      <div class="mt-8 border-l-2 border-primary pl-6">
+        <span class="text-[10px] font-mono text-primary uppercase tracking-widest">Interface</span>
+        <div class="text-xl font-headline font-bold text-white">Visual Systems</div>
+        <div class="text-xs text-outline-variant mt-1">Strategy made visible</div>
+      </div>
+    </div>
+  </div>
 
-<!-- Card 4: Design Services -->
-<div class="service-card">
-<div class="service-card-left">
-<h3 class="font-headline text-2xl font-bold text-white mb-6">Visual Identity & Creative Direction</h3>
-<p class="text-on-surface-variant mb-6">
-Branding that works. Visual identity systems. Content strategy. UX/UI design. Art direction. Creative campaigns that sell.
-</p>
-<p class="text-primary font-semibold mb-6">
-Real numbers: Created visual systems serving 100M+ users. Palm's Treo was an iconic smartphone design before the iPhone era.
-</p>
-</div>
-<div class="service-card-right">
-<svg class="concept-icon" viewBox="0 0 48 48">
-<rect x="8" y="10" width="32" height="28" rx="2"/>
-<circle cx="16" cy="18" r="3"/>
-<path d="M 40 32 L 28 20 L 20 28 L 8 16"/>
-</svg>
-<h4 class="font-bold text-white text-sm mb-1">Visual Systems</h4>
-<p class="text-on-surface-variant text-xs">Strategy made visible</p>
-</div>
-</div>
-
-<!-- Card 5: Business Operations & Leadership -->
-<div class="service-card">
-<div class="service-card-left">
-<h3 class="font-headline text-2xl font-bold text-white mb-6">Scale From Startup to Enterprise</h3>
-<p class="text-on-surface-variant mb-6">
-Organizational strategy. Team building. Operational efficiency. Customer success programs. Strategic planning and execution.
-</p>
-<p class="text-primary font-semibold mb-6">
-Real numbers: Built teams that shipped products to 100M+ users. Achieved 94% customer retention at ET Water.
-</p>
-</div>
-<div class="service-card-right">
-<svg class="concept-icon" viewBox="0 0 48 48">
-<line x1="10" y1="32" x2="38" y2="32"/>
-<polyline points="12,32 12,18 24,8 36,18 36,32"/>
-<rect x="20" y="20" width="8" height="12"/>
-</svg>
-<h4 class="font-bold text-white text-sm mb-1">Execution Excellence</h4>
-<p class="text-on-surface-variant text-xs">Organizations that win</p>
-</div>
-</div>
-
+  <!-- Card 5: Business Operations (12/12) -->
+  <div class="bento-item col-span-12 bg-surface-container-highest/20">
+    <div class="bento-content flex-row items-center gap-12">
+        <div class="flex-1">
+          <span class="key-concept-badge">Operations</span>
+          <h3 class="font-headline text-3xl font-bold text-white gt-headline">Scale From Startup to Enterprise</h3>
+          <p class="text-on-surface-variant text-sm mt-2">Organizational strategy. Team building. Operational efficiency. Built teams that shipped products to 100M+ users with 94% retention.</p>
+        </div>
+        <div class="w-px h-24 bg-outline-variant/20 hidden md:block"></div>
+        <div class="space-y-6 min-w-[240px]">
+          <div class="border-l-2 border-secondary pl-6">
+            <span class="text-[10px] font-mono text-secondary uppercase tracking-widest">Outcome</span>
+            <div class="text-xl font-headline font-bold text-white">Execution Excellence</div>
+            <div class="text-xs text-outline-variant mt-1">Organizations that win</div>
+          </div>
+          <div class="flex items-center gap-4">
+              <div class="text-3xl font-headline font-black text-white">94%</div>
+              <div class="text-[10px] text-outline-variant uppercase leading-none">Customer<br>Retention</div>
+          </div>
+        </div>
+    </div>
+  </div>
 </div>
 </section>
 
