@@ -81,7 +81,7 @@
           },
         },
       }</script>
-<style>
+    <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
@@ -94,6 +94,19 @@
         .glow-card:hover { box-shadow: 0 0 60px rgba(58, 176, 226, 0.15); transition: all 0.5s ease; }
         .tonal-shift-from-surface-to-black { background: linear-gradient(to bottom, #131313, #000000); }
         html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+
+        /* Marquee Archive Styles */
+        .marquee-container { overflow: hidden; position: relative; width: 100%; mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
+        .marquee-content { display: flex; width: max-content; animation: marquee 60s linear infinite; gap: 32px; padding: 20px 0; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .marquee-content:hover { animation-play-state: paused; }
+        .archive-card { width: 420px; flex-shrink: 0; position: relative; border-radius: 12px; overflow: hidden; background: #0e0e0e; border: 1px solid rgba(62, 72, 79, 0.15); transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        .archive-card:hover { border-color: rgba(117, 209, 255, 0.3); box-shadow: 0 0 50px rgba(117, 209, 255, 0.1); transform: translateY(-8px); }
+        .archive-card img { filter: grayscale(100%) contrast(1.1); transition: all 0.7s ease; }
+        .archive-card:hover img { filter: grayscale(0%) contrast(1); transform: scale(1.05); }
+        .archive-label { position: absolute; top: 16px; right: 16px; font-size: 9px; font-family: 'Inter'; font-weight: 700; letter-spacing: 0.15em; padding: 4px 8px; background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 4px; color: #75d1ff; z-index: 10; text-transform: uppercase; }
+        .archive-meta { position: absolute; bottom: 0; left: 0; right: 0; padding: 24px; background: linear-gradient(to top, rgba(0,0,0,0.95), transparent); transform: translateY(100%); transition: transform 0.5s ease; z-index: 20; }
+        .archive-card:hover .archive-meta { transform: translateY(0); }
     </style>
     <!-- Calendly link widget begin -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -250,7 +263,129 @@
 </div>
 </div>
 </section>
-<!-- CTA -->
+<!-- Deployment Archive Section -->
+<section class="py-32 relative overflow-hidden bg-black">
+    <div class="max-w-7xl mx-auto px-12 mb-16 flex flex-col md:flex-row justify-between items-end gap-8">
+        <div class="space-y-4">
+            <span class="font-headline text-[12px] font-extrabold uppercase tracking-widest text-secondary">Global Deployments</span>
+            <h2 class="font-headline text-3xl md:text-4xl font-black text-tight text-white leading-tight">Deployment<br/>Archive</h2>
+        </div>
+        <p class="text-on-surface-variant text-sm max-w-sm font-body leading-relaxed opacity-60">
+            A comprehensive log of technical architectures and digital ecosystems engineered for diverse industry sectors.
+        </p>
+    </div>
+
+    <!-- Infinite Marquee -->
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <!-- Project 01: Nomadz -->
+            <div class="archive-card group">
+                <span class="archive-label">DL-044 / COMPLETED</span>
+                <img src="Nomadz Screenshot 2024-08-25 114518.png" alt="Nomadz Outdoor Adventures" class="w-full h-[280px] object-cover">
+                <div class="archive-meta">
+                    <h4 class="text-white font-bold text-sm mb-1">Nomadz Platform</h4>
+                    <p class="text-primary text-[10px] font-mono uppercase tracking-widest">Adventure Ecosystem / Web + App</p>
+                </div>
+            </div>
+            <!-- Project 02: Datascension -->
+            <div class="archive-card group">
+                <span class="archive-label">DL-045 / COMPLETED</span>
+                <img src="Datascension 2024-08-25 113724.png" alt="Datascension Strategy" class="w-full h-[280px] object-cover">
+                <div class="archive-meta">
+                    <h4 class="text-white font-bold text-sm mb-1">Datascension</h4>
+                    <p class="text-primary text-[10px] font-mono uppercase tracking-widest">Data Strategy / Cloud Synthesis</p>
+                </div>
+            </div>
+            <!-- Project 03: HBA -->
+            <div class="archive-card group">
+                <span class="archive-label">DL-046 / COMPLETED</span>
+                <img src="Real Estate and Home Showcase - Homebuilders Association.png" alt="HBA Tulsa" class="w-full h-[280px] object-cover">
+                <div class="archive-meta">
+                    <h4 class="text-white font-bold text-sm mb-1">HBA Tulsa</h4>
+                    <p class="text-primary text-[10px] font-mono uppercase tracking-widest">Real Estate Showcase / CMS</p>
+                </div>
+            </div>
+            <!-- Project 04: TulsaWCR -->
+            <div class="archive-card group">
+                <span class="archive-label">DL-047 / COMPLETED</span>
+                <img src="TulsaWCR Screenshot 2024-08-25 115357.png" alt="Women's Council of Realtors" class="w-full h-[280px] object-cover">
+                <div class="archive-meta">
+                    <h4 class="text-white font-bold text-sm mb-1">WCR Tulsa</h4>
+                    <p class="text-primary text-[10px] font-mono uppercase tracking-widest">Community Network / Portal</p>
+                </div>
+            </div>
+            <!-- Project 05: Granite Transformations -->
+            <div class="archive-card group">
+                <span class="archive-label">DL-048 / COMPLETED</span>
+                <img src="Digital Trend Advisor - Granite Transformations.png" alt="Granite Transformations" class="w-full h-[280px] object-cover">
+                <div class="archive-meta">
+                    <h4 class="text-white font-bold text-sm mb-1">Granite Advisor</h4>
+                    <p class="text-primary text-[10px] font-mono uppercase tracking-widest">Interactive Sales Tool / UX</p>
+                </div>
+            </div>
+            <!-- Project 06: Gardner -->
+            <div class="archive-card group">
+                <span class="archive-label">DL-049 / COMPLETED</span>
+                <img src="Gardner Pool Builder Portal - Screenshot 2024-08-26 084729.png" alt="Gardner Pools" class="w-full h-[280px] object-cover">
+                <div class="archive-meta">
+                    <h4 class="text-white font-bold text-sm mb-1">Gardner Portal</h4>
+                    <p class="text-primary text-[10px] font-mono uppercase tracking-widest">Industrial Portal / Workflow</p>
+                </div>
+            </div>
+            
+            <!-- Duplicate content for infinite loop -->
+            <div class="archive-card group">
+                <span class="archive-label">DL-044 / COMPLETED</span>
+                <img src="Nomadz Screenshot 2024-08-25 114518.png" alt="Nomadz Outdoor Adventures" class="w-full h-[280px] object-cover">
+                <div class="archive-meta">
+                    <h4 class="text-white font-bold text-sm mb-1">Nomadz Platform</h4>
+                    <p class="text-primary text-[10px] font-mono uppercase tracking-widest">Adventure Ecosystem / Web + App</p>
+                </div>
+            </div>
+            <div class="archive-card group">
+                <span class="archive-label">DL-045 / COMPLETED</span>
+                <img src="Datascension 2024-08-25 113724.png" alt="Datascension Strategy" class="w-full h-[280px] object-cover">
+                <div class="archive-meta">
+                    <h4 class="text-white font-bold text-sm mb-1">Datascension</h4>
+                    <p class="text-primary text-[10px] font-mono uppercase tracking-widest">Data Strategy / Cloud Synthesis</p>
+                </div>
+            </div>
+            <div class="archive-card group">
+                <span class="archive-label">DL-046 / COMPLETED</span>
+                <img src="Real Estate and Home Showcase - Homebuilders Association.png" alt="HBA Tulsa" class="w-full h-[280px] object-cover">
+                <div class="archive-meta">
+                    <h4 class="text-white font-bold text-sm mb-1">HBA Tulsa</h4>
+                    <p class="text-primary text-[10px] font-mono uppercase tracking-widest">Real Estate Showcase / CMS</p>
+                </div>
+            </div>
+            <div class="archive-card group">
+                <span class="archive-label">DL-047 / COMPLETED</span>
+                <img src="TulsaWCR Screenshot 2024-08-25 115357.png" alt="Women's Council of Realtors" class="w-full h-[280px] object-cover">
+                <div class="archive-meta">
+                    <h4 class="text-white font-bold text-sm mb-1">WCR Tulsa</h4>
+                    <p class="text-primary text-[10px] font-mono uppercase tracking-widest">Community Network / Portal</p>
+                </div>
+            </div>
+            <div class="archive-card group">
+                <span class="archive-label">DL-048 / COMPLETED</span>
+                <img src="Digital Trend Advisor - Granite Transformations.png" alt="Granite Transformations" class="w-full h-[280px] object-cover">
+                <div class="archive-meta">
+                    <h4 class="text-white font-bold text-sm mb-1">Granite Advisor</h4>
+                    <p class="text-primary text-[10px] font-mono uppercase tracking-widest">Interactive Sales Tool / UX</p>
+                </div>
+            </div>
+            <div class="archive-card group">
+                <span class="archive-label">DL-049 / COMPLETED</span>
+                <img src="Gardner Pool Builder Portal - Screenshot 2024-08-26 084729.png" alt="Gardner Pools" class="w-full h-[280px] object-cover">
+                <div class="archive-meta">
+                    <h4 class="text-white font-bold text-sm mb-1">Gardner Portal</h4>
+                    <p class="text-primary text-[10px] font-mono uppercase tracking-widest">Industrial Portal / Workflow</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="py-40 px-12 border-t border-outline-variant/15">
 <div class="max-w-5xl mx-auto text-center space-y-12">
 <h2 class="font-headline text-3xl md:text-4xl font-black text-tight text-on-surface">Ready to start a project?</h2>
