@@ -83,14 +83,12 @@
     </script>
 <style>
         body { background-color: #000000; color: #e2e2e2; }
-        .gt-walsheim { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; letter-spacing: -0.02em; }
+        .gt-headline { letter-spacing: -0.02em; line-height: 0.9; }
+        .text-tight { letter-spacing: -0.02em; }
         h2, h3, h4 { letter-spacing: -0.02em; }
         p { line-height: 1.8; }
         .tonal-shift-from-surface-to-black { background: linear-gradient(to bottom, #131313, #000000); }
         .inter-technical { font-family: 'Inter', sans-serif; font-feature-settings: "tnum" on, "ss01" on, "case" on; }
-        .glass-panel { background: rgba(19, 19, 19, 0.7); backdrop-filter: blur(40px); }
-        .primary-glow { box-shadow: 0 0 30px rgba(117, 209, 255, 0.06); }
-        .blue-ring { box-shadow: inset 0 0 0 1px rgba(117, 209, 255, 0.15), 0 0 20px rgba(117, 209, 255, 0.05); }
         html { scroll-behavior: smooth; scroll-padding-top: 100px; }
 
         /* Service Cards Grid */
@@ -217,36 +215,31 @@
 <main class="pt-32 pb-0">
 
 <!-- Hero Section -->
-<section class="max-w-7xl mx-auto px-12 mb-16 flex flex-col items-center text-center">
+<section class="max-w-7xl mx-auto px-12 mb-24 flex flex-col items-center text-center">
 <div class="inline-flex items-center gap-2 mb-6 px-3 py-1 rounded-full border border-outline-variant/15 text-[10px] font-bold tracking-widest uppercase text-secondary">
 <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
 <span>Advanced Offering</span>
 </div>
-<h2 class="text-4xl md:text-5xl font-headline font-black text-white gt-walsheim mb-4 leading-tight">
-Aggressive Growth
+<h2 class="text-4xl md:text-5xl font-headline font-black text-white gt-headline mb-6 text-tight">
+Aggressive <br/>Growth
 </h2>
-<div class="text-primary text-lg font-semibold mb-8">Efficient Rating: 99.98%</div>
-<div class="flex flex-col md:flex-row gap-4 justify-center">
-<a href="https://calendly.com/lee-m-williams/30min" target="_blank" onclick="if(window.Calendly){Calendly.initPopupWidget({url: 'https://calendly.com/lee-m-williams/30min?hide_gdpr_banner=1&background_color=131313&text_color=e2e2e2&primary_color=75d1ff'});return false;}" class="bg-primary text-black px-8 py-3 rounded-full font-bold text-sm uppercase tracking-wider hover:scale-95 active:scale-90 transition-transform">Initiate Protocol</a>
-</div>
+<p class="text-on-surface-variant text-lg max-w-2xl leading-relaxed">
+Strategic partnerships that build execution capacity, compress timelines, and move revenue at scale. We don't add overhead — we amplify your team's impact.
+</p>
 </section>
 
-<!-- Proof Panel / Supporting Statement -->
-<section class="max-w-7xl mx-auto px-12 mb-32">
-<div class="glass-panel border border-primary/20 rounded-xl p-8 md:p-12">
-<h2 class="text-2xl md:text-3xl font-headline font-bold text-white mb-6 border-l-4 border-primary pl-6 gt-walsheim">
-We don't solve the problem you think you have.
-</h2>
-<div class="grid md:grid-cols-2 gap-8">
-<p class="text-on-surface-variant text-lg leading-relaxed">
-We find the problem you can't see yet. Then we methodically reveal the specific focus needed, and create execution targets. For 30 years, we've rebuilt revenue engines in every market model using cloud architecture, intelligent systems, and data-driven strategies.
-</p>
-<div class="bg-surface-container-low border border-primary/15 rounded-lg p-6">
-<h3 class="text-sm font-bold text-secondary uppercase tracking-widest mb-3">Real Case Study: Nomadz</h3>
-<p class="text-sm text-on-surface-variant leading-relaxed">
+<!-- Supporting Statement Section -->
+<section class="max-w-7xl mx-auto px-12 mb-24">
+<div class="grid grid-cols-12 gap-12">
+<div class="col-span-12 md:col-span-7 border-l-4 border-primary pl-12 flex flex-col justify-center">
+<h2 class="text-3xl font-headline font-bold text-white mb-4 gt-headline">We don't solve the problem you think you have.</h2>
+<p class="text-on-surface-variant text-base leading-relaxed max-w-2xl">We find the problem you can't see yet. Then we methodically reveal the specific focus needed, and create execution targets. For 30 years, we've rebuilt revenue engines in every market model using cloud architecture, intelligent systems, and data-driven strategies.</p>
+</div>
+<div class="col-span-12 md:col-span-5 bg-surface-container-low rounded-lg p-8 border border-outline-variant/15">
+<h3 class="font-headline font-bold text-xl text-white mb-4">Real Case Study: Nomadz</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">
 Nomadz came to us with a product-market fit question. We identified their real challenge: targeting optimization across distributed channels. Through our strategic guidance, they increased revenue efficiency by 47% in 90 days and scaled to $2.3M ARR within one year.
 </p>
-</div>
 </div>
 </div>
 </section>
@@ -258,7 +251,7 @@ Nomadz came to us with a product-market fit question. We identified their real c
 <!-- Card 1: Marketing & Advertising -->
 <div class="service-card">
 <div class="service-card-left">
-<h3 class="gt-walsheim text-2xl font-bold text-white mb-6">Strategic Campaigns That Move Revenue</h3>
+<h3 class="font-headline text-2xl font-bold text-white mb-6">Strategic Campaigns That Move Revenue</h3>
 <div class="flex flex-wrap gap-2 mb-6">
 <span class="partner-badge">Google Cloud Partner (85/100)</span>
 <span class="partner-badge">Amazon Partner Network (95/100)</span>
@@ -290,7 +283,7 @@ Real numbers: Clients see 32% average revenue increase through targeted campaign
 <!-- Card 2: Software Development -->
 <div class="service-card">
 <div class="service-card-left">
-<h3 class="gt-walsheim text-2xl font-bold text-white mb-6">Build Systems That Scale</h3>
+<h3 class="font-headline text-2xl font-bold text-white mb-6">Build Systems That Scale</h3>
 <p class="text-on-surface-variant mb-6">
 From infrastructure to intelligent agents, we architect platforms built to grow. Full-stack development. Cloud architecture (AWS, GCP, cloud-native design). Microservices and containerized systems. AI and intelligent agent integration (Claude, ChatGPT, MCPs). DevOps pipelines and deployment automation. Platform scaling — from concept to millions of users.
 </p>
@@ -314,7 +307,7 @@ Real numbers: Reduced time-to-market by 40% for clients. Built cloud-native plat
 <!-- Card 3: Strategy & Acquisition -->
 <div class="service-card">
 <div class="service-card-left">
-<h3 class="gt-walsheim text-2xl font-bold text-white mb-6">Roadmaps, M&A, Revenue Growth</h3>
+<h3 class="font-headline text-2xl font-bold text-white mb-6">Roadmaps, M&A, Revenue Growth</h3>
 <p class="text-on-surface-variant mb-6">
 Strategic guidance on the decisions that define your company. Roadmaps that matter — quarterly through 5-year. Revenue growth strategy. M&A evaluation and negotiation. Partnership development. Ecosystem strategy. Affiliate programs and revenue models.
 </p>
@@ -336,7 +329,7 @@ Real numbers: Companies we've advised achieved $8M ARR (ET Water), maintained 40
 <!-- Card 4: Design Services -->
 <div class="service-card">
 <div class="service-card-left">
-<h3 class="gt-walsheim text-2xl font-bold text-white mb-6">Visual Identity & Creative Direction</h3>
+<h3 class="font-headline text-2xl font-bold text-white mb-6">Visual Identity & Creative Direction</h3>
 <p class="text-on-surface-variant mb-6">
 Branding that works. Visual identity systems. Content strategy. UX/UI design. Art direction. Creative campaigns that sell.
 </p>
@@ -358,7 +351,7 @@ Real numbers: Created visual systems serving 100M+ users. Palm's Treo was an ico
 <!-- Card 5: Business Operations & Leadership -->
 <div class="service-card">
 <div class="service-card-left">
-<h3 class="gt-walsheim text-2xl font-bold text-white mb-6">Scale From Startup to Enterprise</h3>
+<h3 class="font-headline text-2xl font-bold text-white mb-6">Scale From Startup to Enterprise</h3>
 <p class="text-on-surface-variant mb-6">
 Organizational strategy. Team building. Operational efficiency. Customer success programs. Strategic planning and execution.
 </p>
@@ -382,7 +375,7 @@ Real numbers: Built teams that shipped products to 100M+ users. Achieved 94% cus
 
 <!-- Closing CTA Section -->
 <section class="max-w-7xl mx-auto px-12 py-24 text-center">
-<h2 class="gt-walsheim text-3xl md:text-4xl font-bold text-white mb-8">Scale beyond human capacity.</h2>
+<h2 class="font-headline text-3xl md:text-4xl font-bold text-white mb-8">Scale beyond human capacity.</h2>
 <a href="https://calendly.com/lee-m-williams/30min" target="_blank" onclick="if(window.Calendly){Calendly.initPopupWidget({url: 'https://calendly.com/lee-m-williams/30min?hide_gdpr_banner=1&background_color=131313&text_color=e2e2e2&primary_color=75d1ff'});return false;}" class="inline-block bg-primary text-black px-8 py-3 rounded-full font-bold text-sm uppercase tracking-wider hover:scale-95 active:scale-90 transition-transform">Access Edelleye Pipeline</a>
 </section>
 
