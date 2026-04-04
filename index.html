@@ -92,6 +92,14 @@
         .glow-ring { box-shadow: 0 0 30px rgba(58, 176, 226, 0.15); }
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
         html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+
+        /* Explicit mobile nav overrides */
+        @media (max-width: 767px) {
+          #mobile-menu-btn { display: flex !important; }
+        }
+        @media (min-width: 768px) {
+          #mobile-menu-btn { display: none !important; }
+        }
     </style>
     <!-- Calendly link widget begin -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -148,13 +156,13 @@
 </div>
 <main class="relative pt-20">
 <!-- Hero Section -->
-<section class="relative min-h-[921px] flex flex-col items-center justify-center px-6 overflow-hidden">
+<section class="relative min-h-[600px] sm:min-h-[750px] md:min-h-[921px] flex flex-col items-center justify-center px-6 overflow-hidden">
 <div class="absolute inset-0 z-0">
 <img class="w-full h-full object-cover opacity-50" alt="Close-up of a futuristic high-tech robotic face with glowing optical sensors" src="robot-face-hero.png"/>
 <div class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
 </div>
 <div class="relative z-10 max-w-7xl mx-auto text-center">
-<h2 class="font-headline font-extrabold text-4xl md:text-5xl leading-none text-white gt-tight mb-8">
+<h2 class="font-headline font-extrabold text-3xl sm:text-4xl md:text-5xl leading-none text-white gt-tight mb-8">
                     WE SAW YOU<br/>
 <span class="text-primary">BEFORE YOU GOT UP THIS MORNING</span>
                 </h2>
@@ -179,14 +187,14 @@
 </div>
 </section>
 <!-- Supporting Statement Section -->
-<section id="mission" class="py-24 px-12 bg-black">
-<div class="max-w-4xl mx-auto border-l-4 border-primary pl-12">
-<h2 class="font-headline font-bold text-4xl text-white mb-6 gt-tight">We've spent 30 years opening doors that don't open from the inside.</h2>
+<section id="mission" class="py-16 md:py-24 px-4 sm:px-6 md:px-12 bg-black">
+<div class="max-w-4xl mx-auto border-l-4 border-primary pl-6 md:pl-12">
+<h2 class="font-headline font-bold text-3xl sm:text-4xl text-white mb-6 gt-tight">We've spent 30 years opening doors that don't open from the inside.</h2>
 <p class="text-muted-silver text-lg leading-relaxed mb-8">That's not poetic language. It's a function. We see patterns others miss — the invisible systems that shape decisions. Then we translate them into interfaces, strategies, and products that make the opaque legible. The moment people see clearly, they choose differently.</p>
 </div>
 </section>
 <!-- Bento Grid Insights -->
-<section id="capabilities" class="py-32 px-12 bg-black">
+<section id="capabilities" class="py-20 md:py-32 px-4 sm:px-6 md:px-12 bg-black">
 <div class="max-w-7xl mx-auto">
 <div class="grid grid-cols-12 gap-6">
 <!-- Large Feature -->
@@ -231,7 +239,7 @@
 </section>
 <!-- CTA Section -->
 <section class="py-40 bg-black flex flex-col items-center justify-center text-center">
-<h2 class="text-3xl md:text-4xl font-headline font-black gt-tight text-white mb-12">READY TO <br/><span class="text-primary">ELEVATE?</span></h2>
+<h2 class="text-2xl sm:text-3xl md:text-4xl font-headline font-black gt-tight text-white mb-12">READY TO <br/><span class="text-primary">ELEVATE?</span></h2>
 <a href="https://calendly.com/lee-m-williams/30min" target="_blank" onclick="if(window.Calendly){Calendly.initPopupWidget({url: 'https://calendly.com/lee-m-williams/30min?hide_gdpr_banner=1&background_color=131313&text_color=e2e2e2&primary_color=75d1ff'});return false;}" class="bg-white text-black px-10 py-5 rounded-full font-headline font-bold text-sm tracking-tight hover:bg-primary transition-colors inline-block text-center">
                 START YOUR PROJECT
             </a>
@@ -239,7 +247,7 @@
 </main>
 <!-- Footer -->
 <footer class="bg-[#000000] w-full relative py-20 tonal-shift-from-surface-to-black">
-<div class="max-w-7xl mx-auto px-12 flex flex-col md:flex-row justify-between border-t border-[#3E484F]/15 pt-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 flex flex-col md:flex-row justify-between border-t border-[#3E484F]/15 pt-12">
 <div class="mb-8 md:mb-0">
 <a class="h-6 mb-4 block" href="index.html">
 <img alt="Edelleye Logo" class="h-8 object-contain brightness-110" src="edelleye-header-brand-03.png"/>
@@ -249,7 +257,7 @@
   <img src="creative-commons-logo.png" alt="Creative Commons" class="h-5 mt-3 opacity-80 hover:opacity-100 transition-opacity">
 </a>
 </div>
-<div class="flex gap-12">
+<div class="flex gap-8 md:gap-12">
 <div class="flex flex-col gap-4">
 <span class="text-white text-[11px] font-bold uppercase tracking-widest mb-2">Nav</span>
 <a class="font-['Inter'] text-[12px] tracking-wider text-white/40 hover:text-[#75D1FF] transition-opacity" href="index.html">Home</a>
@@ -271,7 +279,7 @@
 </div>
 </div>
 </div>
-<div class="max-w-7xl mx-auto px-12 mt-12 flex justify-between items-center opacity-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 mt-12 flex justify-between items-center opacity-20">
 <div class="flex gap-2">
 <div class="w-2 h-2 rounded-full bg-primary"></div>
 <div class="w-2 h-2 rounded-full bg-secondary"></div>
