@@ -97,7 +97,7 @@
 
         /* Marquee Archive Styles */
         .marquee-container { overflow: hidden; position: relative; width: 100%; mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
-        .marquee-content { display: flex; width: max-content; animation: marquee 60s linear infinite; gap: 32px; padding: 20px 0; }
+        .marquee-content { display: flex; width: max-content; animation: marquee 60s linear infinite; gap: 32px; padding: 0; }
         @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         .marquee-content:hover { animation-play-state: paused; }
         .archive-card { width: 420px; flex-shrink: 0; position: relative; border-radius: 12px; overflow: hidden; background: #0e0e0e; border: 1px solid rgba(62, 72, 79, 0.15); transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
@@ -288,8 +288,8 @@
 </div>
 </section>
 <!-- Deployment Archive Section -->
-<section class="py-32 relative overflow-hidden bg-black">
-    <div class="max-w-7xl mx-auto px-12 mb-16 flex flex-col md:flex-row justify-between items-end gap-8">
+<section class="py-20 relative overflow-hidden bg-black">
+    <div class="max-w-7xl mx-auto px-12 mb-10 flex flex-col md:flex-row justify-between items-end gap-8">
         <div class="space-y-4">
             <span class="font-headline text-[12px] font-extrabold uppercase tracking-widest text-secondary">Global Deployments</span>
             <h2 class="font-headline text-3xl md:text-4xl font-black text-tight text-white leading-tight">Deployment<br/>Archive</h2>
@@ -410,7 +410,7 @@
     </div>
 </section>
 
-<section class="py-40 px-12 border-t border-outline-variant/15">
+<section class="py-24 px-12 border-t border-outline-variant/15">
 <div class="max-w-5xl mx-auto text-center space-y-12">
 <h2 class="font-headline text-3xl md:text-4xl font-black text-tight text-on-surface">Ready to start a project?</h2>
 <div class="flex flex-col md:flex-row justify-center items-center gap-8">
