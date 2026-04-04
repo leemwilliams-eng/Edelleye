@@ -156,6 +156,15 @@
             grid-column: span 1 / span 1 !important;
           }
         }
+
+        /* Explicit mobile nav overrides — belt and suspenders */
+        @media (max-width: 767px) {
+          #mobile-menu-btn { display: flex !important; }
+          nav .desktop-nav { display: none !important; }
+        }
+        @media (min-width: 768px) {
+          #mobile-menu-btn { display: none !important; }
+        }
 </style>
     <!-- Calendly link widget begin -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
