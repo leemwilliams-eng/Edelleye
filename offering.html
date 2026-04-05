@@ -407,7 +407,13 @@ To achieve market placement, we use design and creative, strategy and acquisitio
 <p class="text-on-surface-variant text-lg max-w-3xl mx-auto leading-relaxed mb-8">
 The tiers above reflect how we work: transparent about what you're paying for, honest about the scope, and direct about the outcome. It will be obvious that we have been here before, learned from you, and are there to help you move the needle.
 </p>
-<a href="https://calendly.com/lee-m-williams/30min" target="_blank" onclick="if(window.Calendly){Calendly.initPopupWidget({url: 'https://calendly.com/lee-m-williams/30min?hide_gdpr_banner=1&background_color=131313&text_color=e2e2e2&primary_color=75d1ff'});return false;}" class="inline-block bg-primary text-black px-8 py-3 rounded-full font-bold text-sm uppercase tracking-wider hover:scale-95 active:scale-90 transition-transform">Access Edelleye Pipeline</a>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+  <a href="https://calendly.com/lee-m-williams/30min" target="_blank" onclick="if(window.Calendly){Calendly.initPopupWidget({url: 'https://calendly.com/lee-m-williams/30min?hide_gdpr_banner=1&background_color=131313&text_color=e2e2e2&primary_color=75d1ff'});return false;}" class="inline-block bg-primary text-black px-8 py-3 rounded-full font-bold text-sm uppercase tracking-wider hover:scale-95 active:scale-90 transition-transform">Access Edelleye Pipeline</a>
+  <button onclick="openTechStackDrawer()" class="inline-flex items-center gap-2 border border-primary/40 text-primary px-8 py-3 rounded-full font-bold text-sm uppercase tracking-wider hover:bg-primary/10 hover:border-primary transition-all">
+    Explore Tech Stack
+    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+  </button>
+</div>
 </section>
 
 </main>
@@ -456,10 +462,280 @@ The tiers above reflect how we work: transparent about what you're paying for, h
 </div>
 </footer>
 
+<!-- Tech Stack Drawer Backdrop -->
+<div id="ts-backdrop" onclick="closeTechStackDrawer()" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-40"></div>
+
+<!-- Tech Stack Drawer -->
+<div id="ts-drawer" class="fixed top-0 right-0 h-full w-full md:w-[65%] bg-[#0a0a0a] z-50 overflow-y-auto border-l border-[#3E484F]/30 translate-x-full transition-transform duration-300 ease-out" style="box-shadow: -30px 0 80px rgba(0,0,0,0.7);">
+  <div class="sticky top-0 z-10 bg-[#0a0a0a]/95 backdrop-blur-md border-b border-[#3E484F]/20 px-6 py-5 flex items-center justify-between">
+    <div>
+      <p class="text-[10px] font-bold uppercase tracking-widest text-[#C8811A] font-['Inter']">Infrastructure & Intelligence</p>
+      <h2 class="text-xl font-['Plus_Jakarta_Sans'] font-black text-white tracking-tight mt-0.5">How We Think About Technology</h2>
+    </div>
+    <button onclick="closeTechStackDrawer()" class="p-2 hover:bg-white/10 rounded-full transition-colors">
+      <span class="material-symbols-outlined text-2xl text-white">close</span>
+    </button>
+  </div>
+  <div class="px-6 py-8">
+    <div class="mb-8 p-4 rounded-2xl border border-[#3E484F]/20 bg-[#131313]">
+      <svg id="ts-diagram" viewBox="0 0 800 110" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <defs>
+          <marker id="ts-arr1" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#75d1ff"/></marker>
+          <marker id="ts-arr2" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#C8811A"/></marker>
+        </defs>
+        <line x1="118" y1="55" x2="192" y2="55" stroke="#75d1ff" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#ts-arr1)"/>
+        <line x1="318" y1="55" x2="392" y2="55" stroke="#C8811A" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#ts-arr2)"/>
+        <line x1="518" y1="55" x2="592" y2="55" stroke="#C8811A" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#ts-arr2)"/>
+        <g id="ts-node-challenge" onclick="setTsNode('challenge')" style="cursor:pointer;">
+          <circle id="ts-circ-challenge" cx="80" cy="55" r="36" fill="rgba(117,209,255,0)" stroke="#75d1ff" stroke-width="1.5"/>
+          <text x="80" y="50" font-family="Plus Jakarta Sans,sans-serif" font-size="11" font-weight="700" fill="#75d1ff" text-anchor="middle">Challenge</text>
+          <text x="80" y="65" font-family="Inter,sans-serif" font-size="9" fill="#889299" text-anchor="middle">Client need</text>
+        </g>
+        <g id="ts-node-decision" onclick="setTsNode('decision')" style="cursor:pointer;">
+          <circle id="ts-circ-decision" cx="280" cy="55" r="36" fill="rgba(117,209,255,0)" stroke="#75d1ff" stroke-width="1.5"/>
+          <text x="280" y="50" font-family="Plus Jakarta Sans,sans-serif" font-size="11" font-weight="700" fill="#75d1ff" text-anchor="middle">Decision</text>
+          <text x="280" y="65" font-family="Inter,sans-serif" font-size="9" fill="#889299" text-anchor="middle">Model routing</text>
+        </g>
+        <g id="ts-node-execution" onclick="setTsNode('execution')" style="cursor:pointer;">
+          <circle id="ts-circ-execution" cx="480" cy="55" r="36" fill="rgba(117,209,255,0.15)" stroke="#75d1ff" stroke-width="2.5"/>
+          <text x="480" y="50" font-family="Plus Jakarta Sans,sans-serif" font-size="11" font-weight="700" fill="#75d1ff" text-anchor="middle">Execution</text>
+          <text x="480" y="65" font-family="Inter,sans-serif" font-size="9" fill="#889299" text-anchor="middle">Tech stack</text>
+        </g>
+        <g id="ts-node-outcome" onclick="setTsNode('outcome')" style="cursor:pointer;">
+          <circle id="ts-circ-outcome" cx="680" cy="55" r="36" fill="rgba(117,209,255,0)" stroke="#75d1ff" stroke-width="1.5"/>
+          <text x="680" y="50" font-family="Plus Jakarta Sans,sans-serif" font-size="11" font-weight="700" fill="#75d1ff" text-anchor="middle">Outcome</text>
+          <text x="680" y="65" font-family="Inter,sans-serif" font-size="9" fill="#889299" text-anchor="middle">Proven results</text>
+        </g>
+      </svg>
+    </div>
+    <div id="ts-panel-challenge" class="hidden space-y-3">
+      <p class="text-[11px] font-bold uppercase tracking-widest text-[#889299] font-['Inter'] mb-4">What clients bring us</p>
+      <div class="rounded-xl border border-[#3E484F]/30 overflow-hidden bg-[#131313]">
+        <button onclick="toggleTsCard(this)" class="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-white/5 transition-colors">
+          <div class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-[#E24B4A] flex-shrink-0"></span><span class="font-['Plus_Jakarta_Sans'] font-bold text-sm text-white">Revenue Growth</span></div>
+          <span class="material-symbols-outlined text-[#75d1ff] text-lg transition-transform duration-200" data-chevron>expand_more</span>
+        </button>
+        <div class="ts-card-body hidden px-5 pb-5 border-t border-[#3E484F]/20">
+          <p class="text-[13px] text-[#bdc8d0] leading-relaxed mt-4">Conversion rates plateauing, CAC rising, scale feels out of reach. We audit the full funnel — paid, organic, and product — and rebuild from where the leak is.</p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">PAID MEDIA</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">CRO</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">ANALYTICS</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">A/B TESTING</span>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-xl border border-[#3E484F]/30 overflow-hidden bg-[#131313]">
+        <button onclick="toggleTsCard(this)" class="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-white/5 transition-colors">
+          <div class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-[#1D9E75] flex-shrink-0"></span><span class="font-['Plus_Jakarta_Sans'] font-bold text-sm text-white">Market Disruption</span></div>
+          <span class="material-symbols-outlined text-[#75d1ff] text-lg transition-transform duration-200" data-chevron>expand_more</span>
+        </button>
+        <div class="ts-card-body hidden px-5 pb-5 border-t border-[#3E484F]/20">
+          <p class="text-[13px] text-[#bdc8d0] leading-relaxed mt-4">Competitors moving fast, positioning unclear, window closing. We map the disruption vector, identify your defensible advantage, and define a 90-day repositioning sprint.</p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">STRATEGY</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">POSITIONING</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">SPEED-TO-MARKET</span>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-xl border border-[#3E484F]/30 overflow-hidden bg-[#131313]">
+        <button onclick="toggleTsCard(this)" class="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-white/5 transition-colors">
+          <div class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-[#75d1ff] flex-shrink-0"></span><span class="font-['Plus_Jakarta_Sans'] font-bold text-sm text-white">Product Development</span></div>
+          <span class="material-symbols-outlined text-[#75d1ff] text-lg transition-transform duration-200" data-chevron>expand_more</span>
+        </button>
+        <div class="ts-card-body hidden px-5 pb-5 border-t border-[#3E484F]/20">
+          <p class="text-[13px] text-[#bdc8d0] leading-relaxed mt-4">Ideas exist but shipping is slow, tech debt mounting, reliability uneven. We introduce architecture discipline, CI/CD automation, and a sprint structure that removes blockers.</p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">ARCHITECTURE</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">AGILE</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">CI/CD</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">QA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="ts-panel-decision" class="hidden space-y-3">
+      <p class="text-[11px] font-bold uppercase tracking-widest text-[#889299] font-['Inter'] mb-4">Model selection as honesty — right tool, right task, every time</p>
+      <div class="rounded-xl border border-[#3E484F]/30 overflow-hidden bg-[#131313]">
+        <button onclick="toggleTsCard(this)" class="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-white/5 transition-colors">
+          <div class="flex items-center gap-3"><span class="text-xl">⚡</span><div><span class="font-['Plus_Jakarta_Sans'] font-bold text-sm text-white block">Lightweight — Claude Haiku</span><span class="text-[11px] text-[#889299] font-['Inter']">Fast. Precise. Cheap.</span></div></div>
+          <span class="material-symbols-outlined text-[#75d1ff] text-lg transition-transform duration-200" data-chevron>expand_more</span>
+        </button>
+        <div class="ts-card-body hidden px-5 pb-5 border-t border-[#3E484F]/20">
+          <p class="text-[13px] text-[#bdc8d0] leading-relaxed mt-4">Perfect for structured, high-volume tasks where speed and cost matter more than deep reasoning.</p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">CLASSIFICATION</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">ROUTING</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">DATA EXTRACTION</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">API VALIDATION</span>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-xl border border-[#3E484F]/30 overflow-hidden bg-[#131313]">
+        <button onclick="toggleTsCard(this)" class="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-white/5 transition-colors">
+          <div class="flex items-center gap-3"><span class="text-xl">🎯</span><div><span class="font-['Plus_Jakarta_Sans'] font-bold text-sm text-white block">Midweight — Claude Sonnet</span><span class="text-[11px] text-[#889299] font-['Inter']">Balanced reasoning. Quality output.</span></div></div>
+          <span class="material-symbols-outlined text-[#75d1ff] text-lg transition-transform duration-200" data-chevron>expand_more</span>
+        </button>
+        <div class="ts-card-body hidden px-5 pb-5 border-t border-[#3E484F]/20">
+          <p class="text-[13px] text-[#bdc8d0] leading-relaxed mt-4">The workhorse for synthesis, generation, and code work. Cost-effective for the quality it returns.</p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">CONTENT GENERATION</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">CODE REVIEW</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">API DESIGN</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">SEMANTIC ANALYSIS</span>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-xl border border-[#3E484F]/30 overflow-hidden bg-[#131313]">
+        <button onclick="toggleTsCard(this)" class="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-white/5 transition-colors">
+          <div class="flex items-center gap-3"><span class="text-xl">🔬</span><div><span class="font-['Plus_Jakarta_Sans'] font-bold text-sm text-white block">Heavyweight — Claude Opus</span><span class="text-[11px] text-[#889299] font-['Inter']">Deep reasoning. Hard problems. Worth it.</span></div></div>
+          <span class="material-symbols-outlined text-[#75d1ff] text-lg transition-transform duration-200" data-chevron>expand_more</span>
+        </button>
+        <div class="ts-card-body hidden px-5 pb-5 border-t border-[#3E484F]/20">
+          <p class="text-[13px] text-[#bdc8d0] leading-relaxed mt-4">Reserved for complex architecture decisions, strategic planning, and novel problems that require extended reasoning chains.</p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">ARCHITECTURE DESIGN</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">STRATEGIC PLANNING</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">CRITICAL DECISIONS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="ts-panel-execution" class="space-y-3">
+      <p class="text-[11px] font-bold uppercase tracking-widest text-[#889299] font-['Inter'] mb-4">The tools we deploy — click a layer to expand</p>
+      <div class="rounded-xl border border-[#3E484F]/30 overflow-hidden bg-[#131313]">
+        <button onclick="toggleTsCard(this)" class="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-white/5 transition-colors">
+          <div class="flex items-center gap-3"><span class="material-symbols-outlined text-[#C8811A] text-xl">dns</span><span class="font-['Plus_Jakarta_Sans'] font-bold text-sm text-white">Infrastructure & DevOps</span></div>
+          <span class="material-symbols-outlined text-[#75d1ff] text-lg transition-transform duration-200" data-chevron>expand_more</span>
+        </button>
+        <div class="ts-card-body hidden px-5 pb-5 border-t border-[#3E484F]/20">
+          <p class="text-[13px] text-[#bdc8d0] leading-relaxed mt-4">Cloud-native infrastructure built for scale and reliability. We architect for growth from day one.</p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#C8811A]">AWS</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#C8811A]">GCP</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#C8811A]">DOCKER</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#C8811A]">KUBERNETES</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#C8811A]">GITHUB</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#C8811A]">CI/CD</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#C8811A]">LINUX</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#C8811A]">MICROSERVICES</span>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-xl border border-[#3E484F]/30 overflow-hidden bg-[#131313]">
+        <button onclick="toggleTsCard(this)" class="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-white/5 transition-colors">
+          <div class="flex items-center gap-3"><span class="material-symbols-outlined text-[#75d1ff] text-xl">code</span><span class="font-['Plus_Jakarta_Sans'] font-bold text-sm text-white">Languages & Frameworks</span></div>
+          <span class="material-symbols-outlined text-[#75d1ff] text-lg transition-transform duration-200" data-chevron>expand_more</span>
+        </button>
+        <div class="ts-card-body hidden px-5 pb-5 border-t border-[#3E484F]/20">
+          <p class="text-[13px] text-[#bdc8d0] leading-relaxed mt-4">Full-stack capability from data pipelines to consumer-facing mobile interfaces, with AI integration throughout.</p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">PYTHON</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">JAVASCRIPT</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">REACT NATIVE</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">REST APIs</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">SQL</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">CLAUDE API</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">MCPs</span>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-xl border border-[#3E484F]/30 overflow-hidden bg-[#131313]">
+        <button onclick="toggleTsCard(this)" class="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-white/5 transition-colors">
+          <div class="flex items-center gap-3"><span class="material-symbols-outlined text-[#C8811A] text-xl">build</span><span class="font-['Plus_Jakarta_Sans'] font-bold text-sm text-white">Tools & Platforms</span></div>
+          <span class="material-symbols-outlined text-[#75d1ff] text-lg transition-transform duration-200" data-chevron>expand_more</span>
+        </button>
+        <div class="ts-card-body hidden px-5 pb-5 border-t border-[#3E484F]/20">
+          <p class="text-[13px] text-[#bdc8d0] leading-relaxed mt-4">The operational and analytical layer that ties design, data, and delivery together across every engagement.</p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#C8811A]">FIGMA</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#C8811A]">CLICKUP</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#C8811A]">JIRA</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#C8811A]">PRODUCTBOARD</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#C8811A]">POSTGRESQL</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#C8811A]">GOOGLE ANALYTICS</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#C8811A]">TABLEAU</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#C8811A]">HUBSPOT</span>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-xl border border-[#3E484F]/30 overflow-hidden bg-[#131313]">
+        <button onclick="toggleTsCard(this)" class="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-white/5 transition-colors">
+          <div class="flex items-center gap-3"><span class="material-symbols-outlined text-[#75d1ff] text-xl">rocket_launch</span><span class="font-['Plus_Jakarta_Sans'] font-bold text-sm text-white">Services & Offerings</span></div>
+          <span class="material-symbols-outlined text-[#75d1ff] text-lg transition-transform duration-200" data-chevron>expand_more</span>
+        </button>
+        <div class="ts-card-body hidden px-5 pb-5 border-t border-[#3E484F]/20">
+          <p class="text-[13px] text-[#bdc8d0] leading-relaxed mt-4">Six integrated service lines delivered as a unified growth engine — not siloed consultants with hand-off risk.</p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">MARKETING & ADVERTISING</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">SOFTWARE DEVELOPMENT</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">STRATEGY & ACQUISITION</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">DESIGN SERVICES</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">BUSINESS OPERATIONS</span><span class="text-[10px] font-mono bg-[#1f1f1f] px-2 py-1 rounded text-[#75d1ff]">PRODUCT MANAGEMENT</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="ts-panel-outcome" class="hidden space-y-3">
+      <p class="text-[11px] font-bold uppercase tracking-widest text-[#889299] font-['Inter'] mb-4">Proven outcomes across all active client engagements</p>
+      <div class="rounded-xl border border-[#3E484F]/30 overflow-hidden bg-[#131313]">
+        <button onclick="toggleTsCard(this)" class="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-white/5 transition-colors">
+          <div class="flex items-center gap-3"><span class="font-['Plus_Jakarta_Sans'] font-black text-2xl text-[#C8811A]">32%</span><span class="font-['Plus_Jakarta_Sans'] font-bold text-sm text-white">Avg Revenue Increase</span></div>
+          <span class="material-symbols-outlined text-[#75d1ff] text-lg transition-transform duration-200" data-chevron>expand_more</span>
+        </button>
+        <div class="ts-card-body hidden px-5 pb-5 border-t border-[#3E484F]/20">
+          <p class="text-[13px] text-[#bdc8d0] leading-relaxed mt-4">Across all active client engagements over the last 24 months. Measured against baseline revenue at engagement start, attributed to Edelleye-led initiatives.</p>
+        </div>
+      </div>
+      <div class="rounded-xl border border-[#3E484F]/30 overflow-hidden bg-[#131313]">
+        <button onclick="toggleTsCard(this)" class="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-white/5 transition-colors">
+          <div class="flex items-center gap-3"><span class="font-['Plus_Jakarta_Sans'] font-black text-2xl text-[#C8811A]">40%</span><span class="font-['Plus_Jakarta_Sans'] font-bold text-sm text-white">Faster Time to Market</span></div>
+          <span class="material-symbols-outlined text-[#75d1ff] text-lg transition-transform duration-200" data-chevron>expand_more</span>
+        </button>
+        <div class="ts-card-body hidden px-5 pb-5 border-t border-[#3E484F]/20">
+          <p class="text-[13px] text-[#bdc8d0] leading-relaxed mt-4">Reduced sprint cycles through AI-assisted development, automated testing pipelines, and CI/CD infrastructure that removes manual bottlenecks at every stage.</p>
+        </div>
+      </div>
+      <div class="rounded-xl border border-[#3E484F]/30 overflow-hidden bg-[#131313]">
+        <button onclick="toggleTsCard(this)" class="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-white/5 transition-colors">
+          <div class="flex items-center gap-3"><span class="font-['Plus_Jakarta_Sans'] font-black text-2xl text-[#C8811A]">99.9%</span><span class="font-['Plus_Jakarta_Sans'] font-bold text-sm text-white">System Uptime</span></div>
+          <span class="material-symbols-outlined text-[#75d1ff] text-lg transition-transform duration-200" data-chevron>expand_more</span>
+        </button>
+        <div class="ts-card-body hidden px-5 pb-5 border-t border-[#3E484F]/20">
+          <p class="text-[13px] text-[#bdc8d0] leading-relaxed mt-4">Infrastructure monitored 24/7 with automated failover, redundancy baked in from the architecture stage, and on-call escalation protocols for every production environment we manage.</p>
+        </div>
+      </div>
+      <div class="rounded-xl border border-[#3E484F]/30 overflow-hidden bg-[#131313]">
+        <button onclick="toggleTsCard(this)" class="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-white/5 transition-colors">
+          <div class="flex items-center gap-3"><span class="font-['Plus_Jakarta_Sans'] font-black text-2xl text-[#C8811A]">85%</span><span class="font-['Plus_Jakarta_Sans'] font-bold text-sm text-white">Client Retention</span></div>
+          <span class="material-symbols-outlined text-[#75d1ff] text-lg transition-transform duration-200" data-chevron>expand_more</span>
+        </button>
+        <div class="ts-card-body hidden px-5 pb-5 border-t border-[#3E484F]/20">
+          <p class="text-[13px] text-[#bdc8d0] leading-relaxed mt-4">Long-term relationships built on measurable results, transparent reporting, and a delivery model that makes Edelleye indispensable rather than interchangeable.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-10 border-l-2 border-[#75d1ff]/30 pl-5">
+      <p class="text-[13px] text-[#889299] italic leading-relaxed font-['Inter']">"The best technology is invisible. It works so well that nobody questions whether it's there. Our job is to build systems so thoughtfully engineered that they become indispensable to your operation."</p>
+    </div>
+  </div>
+</div>
+
 <script>
 function toggleMobileMenu() {
   const menu = document.getElementById('mobile-menu');
   menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
 }
+
+function openTechStackDrawer() {
+  document.getElementById('ts-drawer').classList.remove('translate-x-full');
+  document.getElementById('ts-backdrop').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+  setTsNode('execution');
+}
+
+function closeTechStackDrawer() {
+  document.getElementById('ts-drawer').classList.add('translate-x-full');
+  document.getElementById('ts-backdrop').classList.add('hidden');
+  document.body.style.overflow = '';
+}
+
+function setTsNode(node) {
+  var nodes = ['challenge', 'decision', 'execution', 'outcome'];
+  nodes.forEach(function(n) {
+    var circ = document.getElementById('ts-circ-' + n);
+    var panel = document.getElementById('ts-panel-' + n);
+    if (n === node) {
+      circ.setAttribute('fill', 'rgba(117,209,255,0.15)');
+      circ.setAttribute('stroke-width', '2.5');
+      panel.classList.remove('hidden');
+    } else {
+      circ.setAttribute('fill', 'rgba(117,209,255,0)');
+      circ.setAttribute('stroke-width', '1.5');
+      panel.classList.add('hidden');
+    }
+  });
+}
+
+function toggleTsCard(btn) {
+  var body = btn.nextElementSibling;
+  var chevron = btn.querySelector('[data-chevron]');
+  var panel = btn.closest('[id^="ts-panel-"]');
+  var isOpen = !body.classList.contains('hidden');
+  panel.querySelectorAll('.ts-card-body').forEach(function(b) {
+    b.classList.add('hidden');
+    var ch = b.previousElementSibling.querySelector('[data-chevron]');
+    if (ch) ch.style.transform = 'rotate(0deg)';
+  });
+  if (!isOpen) {
+    body.classList.remove('hidden');
+    if (chevron) chevron.style.transform = 'rotate(180deg)';
+  }
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeTechStackDrawer();
+});
 </script>
 </body></html>
