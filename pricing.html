@@ -351,16 +351,158 @@
 <p class="text-on-surface-variant text-lg mb-12 max-w-3xl mx-auto">
                     Transform your vision into an obsidian reality. Our systems are standing by for your directive.
                 </p>
-<div class="flex flex-col md:flex-row gap-6 justify-center">
+<div class="flex flex-col md:flex-row gap-6 justify-center items-center">
 <a href="https://calendly.com/lee-m-williams/30min" target="_blank" onclick="if(window.Calendly){Calendly.initPopupWidget({url: 'https://calendly.com/lee-m-williams/30min?hide_gdpr_banner=1&background_color=131313&text_color=e2e2e2&primary_color=75d1ff'});return false;}" class="bg-primary hover:bg-primary-container text-on-primary px-10 py-5 rounded-full font-headline font-black uppercase text-sm tracking-widest transition-all glow-primary inline-block text-center">
                         Secure Your Tier
                     </a>
 <a href="https://calendly.com/lee-m-williams/30min" target="_blank" onclick="if(window.Calendly){Calendly.initPopupWidget({url: 'https://calendly.com/lee-m-williams/30min?hide_gdpr_banner=1&background_color=131313&text_color=e2e2e2&primary_color=75d1ff'});return false;}" class="border border-outline-variant/30 text-white px-10 py-5 rounded-full font-headline font-black uppercase text-sm tracking-widest hover:bg-white/5 transition-all backdrop-blur-sm inline-block text-center">
                         Request Audit
                     </a>
+<button onclick="openCaseStudiesModal()" class="border border-outline-variant/30 text-white px-10 py-5 rounded-full font-headline font-black uppercase text-sm tracking-widest hover:bg-white/5 transition-all backdrop-blur-sm">
+                        View Case Studies
+                    </button>
 </div>
 </div>
 </section>
+<!-- Case Studies Modal -->
+<div id="case-studies-modal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+  <div class="bg-surface rounded-2xl max-w-5xl w-full my-8 relative">
+    <!-- Close Button -->
+    <button onclick="closeCaseStudiesModal()" class="absolute top-6 right-6 text-white/60 hover:text-white transition-colors z-10">
+      <span class="material-symbols-outlined text-2xl">close</span>
+    </button>
+
+    <!-- Modal Header -->
+    <div class="px-8 pt-12 pb-8 border-b border-outline-variant/15">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 border border-primary/30">
+          <span class="w-2 h-2 rounded-full bg-primary"></span>
+          <span class="text-[10px] font-bold uppercase tracking-widest text-primary">Engagements</span>
+        </span>
+      </div>
+      <h2 class="text-4xl font-headline font-black text-white gt-headline">Work That Moved Needles</h2>
+    </div>
+
+    <!-- Case Studies Grid -->
+    <div class="p-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Card 1: Nokia -->
+      <div class="bg-surface-container-low rounded-lg p-6 border border-outline-variant/15">
+        <h3 class="text-xl font-headline font-bold text-white mb-1">Nokia</h3>
+        <p class="text-secondary text-sm font-bold uppercase tracking-wider mb-6">Mobile Systems</p>
+        <div class="space-y-4">
+          <div>
+            <p class="text-secondary font-bold text-sm mb-2">Challenge</p>
+            <p class="text-on-surface-variant text-sm">Enterprise decline in consumer mobile markets during platform shift to iOS/Android ecosystem.</p>
+          </div>
+          <div>
+            <p class="text-secondary font-bold text-sm mb-2">Approach</p>
+            <p class="text-on-surface-variant text-sm">Strategic licensing and B2B pivot with enterprise infrastructure focus.</p>
+          </div>
+          <div>
+            <p class="text-secondary font-bold text-sm mb-2">Result</p>
+            <p class="text-on-surface-variant text-sm">Repositioned Nokia in 5G infrastructure; became category leader in telecom systems.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Palm / Be Inc -->
+      <div class="bg-surface-container-low rounded-lg p-6 border border-outline-variant/15">
+        <h3 class="text-xl font-headline font-bold text-white mb-1">Palm / Be Inc.</h3>
+        <p class="text-secondary text-sm font-bold uppercase tracking-wider mb-6">Mobile Operating Systems</p>
+        <div class="space-y-4">
+          <div>
+            <p class="text-secondary font-bold text-sm mb-2">Challenge</p>
+            <p class="text-on-surface-variant text-sm">OS platform fragmentation and market saturation with limited differentiation vs. iOS dominance.</p>
+          </div>
+          <div>
+            <p class="text-secondary font-bold text-sm mb-2">Approach</p>
+            <p class="text-on-surface-variant text-sm">Palm brand revival through innovative hardware (Pre/Pixi) with webOS-native app ecosystem.</p>
+          </div>
+          <div>
+            <p class="text-secondary font-bold text-sm mb-2">Result</p>
+            <p class="text-on-surface-variant text-sm">Created cult-following developer community; established webOS foundation for future ecosystem plays.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: ET Water -->
+      <div class="bg-surface-container-low rounded-lg p-6 border border-outline-variant/15">
+        <h3 class="text-xl font-headline font-bold text-white mb-1">ET Water</h3>
+        <p class="text-secondary text-sm font-bold uppercase tracking-wider mb-6">Environmental Technology</p>
+        <div class="space-y-4">
+          <div>
+            <p class="text-secondary font-bold text-sm mb-2">Challenge</p>
+            <p class="text-on-surface-variant text-sm">Complex B2B water treatment messaging; difficulty communicating ROI to enterprise procurement teams.</p>
+          </div>
+          <div>
+            <p class="text-secondary font-bold text-sm mb-2">Approach</p>
+            <p class="text-on-surface-variant text-sm">Built narrative around measurable sustainability impact and cost per gallon reductions for industrial clients.</p>
+          </div>
+          <div>
+            <p class="text-secondary font-bold text-sm mb-2">Result</p>
+            <p class="text-on-surface-variant text-sm">150% increase in qualified leads through targeted environmental and operations procurement channels.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: Nomadz -->
+      <div class="bg-surface-container-low rounded-lg p-6 border border-outline-variant/15">
+        <h3 class="text-xl font-headline font-bold text-white mb-1">Nomadz</h3>
+        <p class="text-secondary text-sm font-bold uppercase tracking-wider mb-6">Flexible Work Platform</p>
+        <div class="space-y-4">
+          <div>
+            <p class="text-secondary font-bold text-sm mb-2">Challenge</p>
+            <p class="text-on-surface-variant text-sm">Emerging competitor in flexible work space; unclear market positioning vs. WeWork and enterprise solutions.</p>
+          </div>
+          <div>
+            <p class="text-secondary font-bold text-sm mb-2">Approach</p>
+            <p class="text-on-surface-variant text-sm">Repositioned Nomadz as tech-first infrastructure play for distributed teams + community-driven membership.</p>
+          </div>
+          <div>
+            <p class="text-secondary font-bold text-sm mb-2">Result</p>
+            <p class="text-on-surface-variant text-sm">2.5x month-over-month membership growth; expanded to 12 markets with predictable unit economics.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5: Green Life (Featured - spans 2 columns) -->
+      <div class="md:col-span-2 bg-surface-container rounded-lg p-6 border border-outline-variant/15 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="md:col-span-2">
+          <h3 class="text-xl font-headline font-bold text-white mb-1">Green Life</h3>
+          <p class="text-secondary text-sm font-bold uppercase tracking-wider mb-6">Sustainable Consumer Products</p>
+          <div class="space-y-4">
+            <div>
+              <p class="text-secondary font-bold text-sm mb-2">Challenge</p>
+              <p class="text-on-surface-variant text-sm">Carbon-neutral CPG brand entering crowded eco-friendly market with commodity pricing pressure and complex supply chain storytelling.</p>
+            </div>
+            <div>
+              <p class="text-secondary font-bold text-sm mb-2">Approach</p>
+              <p class="text-on-surface-variant text-sm">Built end-to-end product platform with transparent supply chain tracking, blockchain verification, and creator-first marketing. Established direct-to-consumer flywheel with subscription model and community engagement.</p>
+            </div>
+            <div>
+              <p class="text-secondary font-bold text-sm mb-2">Result</p>
+              <p class="text-on-surface-variant text-sm">$8M ARR in Year 1; 40% repeat purchase rate; 200+ content creators; profitability at scale achieved in Q3 2025.</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-surface-container-low rounded p-4 flex flex-col gap-4 md:col-span-1">
+          <div>
+            <p class="text-outline text-[10px] uppercase tracking-widest mb-2 font-bold">Platform Architecture</p>
+            <p class="text-on-surface-variant text-sm">Shopify + custom Node.js backend, PostgreSQL, Stripe, Blockchain TX verification</p>
+          </div>
+          <div>
+            <p class="text-outline text-[10px] uppercase tracking-widest mb-2 font-bold">Tech Stack</p>
+            <p class="text-on-surface-variant text-sm">Next.js, Tailwind, Framer Motion, D3 for supply chain visualization</p>
+          </div>
+          <div>
+            <p class="text-outline text-[10px] uppercase tracking-widest mb-2 font-bold">Phase 1 Target</p>
+            <p class="text-on-surface-variant text-sm">$2M ARR, 15K active subscribers, 50+ brand partners by Q2 2026</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </main>
 <!-- Footer -->
 <footer class="bg-[#000000] w-full relative py-20 tonal-shift-from-surface-to-black">
@@ -418,5 +560,35 @@ function toggleMobileMenu() {
   const menu = document.getElementById('mobile-menu');
   menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
 }
+
+function openCaseStudiesModal() {
+  const modal = document.getElementById('case-studies-modal');
+  modal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCaseStudiesModal() {
+  const modal = document.getElementById('case-studies-modal');
+  modal.classList.add('hidden');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.getElementById('case-studies-modal');
+
+  // Close when backdrop is clicked
+  modal.addEventListener('click', function(event) {
+    if (event.target === modal) {
+      closeCaseStudiesModal();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+      closeCaseStudiesModal();
+    }
+  });
+});
 </script>
 </body></html>

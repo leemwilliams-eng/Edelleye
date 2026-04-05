@@ -268,10 +268,289 @@
 <div class="max-w-4xl mx-auto px-6 md:px-12 mb-16">
 <p class="text-muted-silver text-lg leading-relaxed">Edelleye Digital works as a fully integrated growth engine — combining marketing, software, design, strategy, and operations into one system that moves your revenue in a single direction. We don't just solve the problem you walk in with; we find the one you can't see, then give you the tools, dashboards, and measures to keep winning on your own. From helping brands like Nokia navigate pivotal moments to building the AI and data systems that will define the next decade, we're here to make sure you don't just grow — you survive what's coming.</p>
 </div>
+<div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
 <a href="https://calendly.com/lee-m-williams/30min" target="_blank" onclick="if(window.Calendly){Calendly.initPopupWidget({url: 'https://calendly.com/lee-m-williams/30min?hide_gdpr_banner=1&background_color=131313&text_color=e2e2e2&primary_color=75d1ff'});return false;}" class="bg-white text-black px-10 py-5 rounded-full font-headline font-bold text-sm tracking-tight hover:bg-primary transition-colors inline-block text-center">
                 START YOUR PROJECT
             </a>
+<button onclick="openCaseStudiesModal()" class="border border-outline-variant/30 text-white px-10 py-5 rounded-full font-headline font-bold text-sm tracking-tight hover:bg-white/5 transition-colors inline-block text-center">
+                VIEW CASE STUDIES
+            </button>
+</div>
 </section>
+<!-- Case Studies Modal -->
+<div id="case-studies-modal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+  <div class="bg-[#131313] rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-[#3E484F]/30 relative">
+    <!-- Close Button -->
+    <button onclick="closeCaseStudiesModal()" class="absolute top-6 right-6 z-10 p-2 hover:bg-white/10 rounded-full transition-colors">
+      <span class="material-symbols-outlined text-2xl text-white">close</span>
+    </button>
+
+    <!-- Modal Content -->
+    <div class="p-8 md:p-12">
+      <!-- Section Header -->
+      <div class="mb-12 text-center">
+        <div class="inline-flex items-center gap-2 mb-6 px-3 py-1 rounded-full border border-[#3E484F]/20 text-[10px] font-bold tracking-widest uppercase text-[#C8811A]">
+          <span class="w-2 h-2 rounded-full bg-[#C8811A] animate-pulse"></span>
+          <span>Engagements</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-['Plus_Jakarta_Sans'] font-black text-white tracking-tight">Work That Moved Needles</h2>
+        <p class="text-[#bdc8d0] text-base max-w-2xl mx-auto mt-4 leading-relaxed">
+          A selection of engagements across platform strategy, SaaS transformation, product development, and revenue growth.
+        </p>
+      </div>
+
+      <!-- Card Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- CARD 1: Nokia -->
+        <div class="bg-[#1b1b1b] rounded-2xl p-8 border border-[#3E484F]/15 hover:border-[#75d1ff]/20 transition-all duration-500 hover:-translate-y-1 flex flex-col justify-between" style="box-shadow: 0 0 40px rgba(58,176,226,0.06);">
+          <div>
+            <div class="flex items-start justify-between mb-6">
+              <div>
+                <span class="text-[10px] font-bold tracking-widest uppercase text-[#75d1ff] font-['Inter']">Platform Strategy</span>
+                <h3 class="text-2xl font-['Plus_Jakarta_Sans'] font-black text-white mt-1 tracking-tight">Nokia Corporation</h3>
+                <span class="text-[10px] font-['Inter'] text-[#889299] uppercase tracking-widest">SVP, Smartphone Products · Helsinki</span>
+              </div>
+              <span class="text-[10px] font-mono bg-[#75d1ff]/10 text-[#75d1ff] px-3 py-1 rounded-full border border-[#75d1ff]/20 whitespace-nowrap">100M+ Users</span>
+            </div>
+            <div class="space-y-4 text-sm font-['Inter'] text-[#bdc8d0] leading-relaxed">
+              <div>
+                <span class="text-[10px] uppercase tracking-widest text-[#C8811A] font-bold block mb-1">Challenge</span>
+                <p>Sustaining Nokia's #1 global smartphone position as the mobile ecosystem fragmented and developer expectations shifted.</p>
+              </div>
+              <div>
+                <span class="text-[10px] uppercase tracking-widest text-[#C8811A] font-bold block mb-1">Approach</span>
+                <p>Defined a 5-year platform roadmap, open-sourced Symbian OS, established the Symbian Foundation, and negotiated strategic partnerships with Adobe, Microsoft, and Samsung.</p>
+              </div>
+              <div>
+                <span class="text-[10px] uppercase tracking-widest text-[#C8811A] font-bold block mb-1">Result</span>
+                <p>Maintained 40% global market share through 2010. Developer community grew from 3K to 12K+ members; app ecosystem expanded from 8K to 25K+ applications in 18 months.</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-8 pt-6 border-t border-[#3E484F]/15 flex gap-6">
+            <div>
+              <div class="text-2xl font-['Plus_Jakarta_Sans'] font-black text-white">40%</div>
+              <div class="text-[10px] text-[#889299] uppercase tracking-wider">Global Market Share</div>
+            </div>
+            <div>
+              <div class="text-2xl font-['Plus_Jakarta_Sans'] font-black text-white">25K+</div>
+              <div class="text-[10px] text-[#889299] uppercase tracking-wider">Ecosystem Apps</div>
+            </div>
+            <div>
+              <div class="text-2xl font-['Plus_Jakarta_Sans'] font-black text-white">12K+</div>
+              <div class="text-[10px] text-[#889299] uppercase tracking-wider">Developers</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: Palm / Be Inc. -->
+        <div class="bg-[#1b1b1b] rounded-2xl p-8 border border-[#3E484F]/15 hover:border-[#75d1ff]/20 transition-all duration-500 hover:-translate-y-1 flex flex-col justify-between" style="box-shadow: 0 0 40px rgba(58,176,226,0.06);">
+          <div>
+            <div class="flex items-start justify-between mb-6">
+              <div>
+                <span class="text-[10px] font-bold tracking-widest uppercase text-[#75d1ff] font-['Inter']">Product Development</span>
+                <h3 class="text-2xl font-['Plus_Jakarta_Sans'] font-black text-white mt-1 tracking-tight">Palm, Inc. / Be, Inc.</h3>
+                <span class="text-[10px] font-['Inter'] text-[#889299] uppercase tracking-widest">VP Product Development · Sunnyvale</span>
+              </div>
+              <span class="text-[10px] font-mono bg-[#75d1ff]/10 text-[#75d1ff] px-3 py-1 rounded-full border border-[#75d1ff]/20 whitespace-nowrap">$1.2B IP Exit</span>
+            </div>
+            <div class="space-y-4 text-sm font-['Inter'] text-[#bdc8d0] leading-relaxed">
+              <div>
+                <span class="text-[10px] uppercase tracking-widest text-[#C8811A] font-bold block mb-1">Challenge</span>
+                <p>Defining the smartphone category before it existed — merging phone and PDA into a single platform without a market reference point.</p>
+              </div>
+              <div>
+                <span class="text-[10px] uppercase tracking-widest text-[#C8811A] font-bold block mb-1">Approach</span>
+                <p>Led Palm OS evolution for 30M+ active users, shipped 8 major releases, launched the Treo smartphone line as the first integrated phone/PDA, and built a developer ecosystem with Sony, Samsung, and Kyocera.</p>
+              </div>
+              <div>
+                <span class="text-[10px] uppercase tracking-widest text-[#C8811A] font-bold block mb-1">Result</span>
+                <p>2M+ Treo units sold in year one. 70% U.S. market share. $1.5B in annual hardware revenue. Platform IP acquired by HP for $1.2B and licensed to LG and Samsung.</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-8 pt-6 border-t border-[#3E484F]/15 flex gap-6">
+            <div>
+              <div class="text-2xl font-['Plus_Jakarta_Sans'] font-black text-white">$1.2B</div>
+              <div class="text-[10px] text-[#889299] uppercase tracking-wider">IP Acquisition</div>
+            </div>
+            <div>
+              <div class="text-2xl font-['Plus_Jakarta_Sans'] font-black text-white">70%</div>
+              <div class="text-[10px] text-[#889299] uppercase tracking-wider">U.S. Market Share</div>
+            </div>
+            <div>
+              <div class="text-2xl font-['Plus_Jakarta_Sans'] font-black text-white">2M+</div>
+              <div class="text-[10px] text-[#889299] uppercase tracking-wider">Treo Units Sold</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3: ET Water -->
+        <div class="bg-[#1b1b1b] rounded-2xl p-8 border border-[#3E484F]/15 hover:border-[#75d1ff]/20 transition-all duration-500 hover:-translate-y-1 flex flex-col justify-between" style="box-shadow: 0 0 40px rgba(58,176,226,0.06);">
+          <div>
+            <div class="flex items-start justify-between mb-6">
+              <div>
+                <span class="text-[10px] font-bold tracking-widest uppercase text-[#75d1ff] font-['Inter']">SaaS Transformation</span>
+                <h3 class="text-2xl font-['Plus_Jakarta_Sans'] font-black text-white mt-1 tracking-tight">ET Water Systems</h3>
+                <span class="text-[10px] font-['Inter'] text-[#889299] uppercase tracking-widest">Chief Technology Officer · Austin, TX</span>
+              </div>
+              <span class="text-[10px] font-mono bg-[#75d1ff]/10 text-[#75d1ff] px-3 py-1 rounded-full border border-[#75d1ff]/20 whitespace-nowrap">$40M ARR</span>
+            </div>
+            <div class="space-y-4 text-sm font-['Inter'] text-[#bdc8d0] leading-relaxed">
+              <div>
+                <span class="text-[10px] uppercase tracking-widest text-[#C8811A] font-bold block mb-1">Challenge</span>
+                <p>Legacy on-premise water management software with declining market share facing pressure from cloud-native SaaS competitors in the smart water infrastructure space.</p>
+              </div>
+              <div>
+                <span class="text-[10px] uppercase tracking-widest text-[#C8811A] font-bold block mb-1">Approach</span>
+                <p>Led API-first architecture transformation, migrated legacy customers to cloud platform, built real-time IoT integration, and established new revenue streams through dynamic pricing and consumption-based models.</p>
+              </div>
+              <div>
+                <span class="text-[10px] uppercase tracking-widest text-[#C8811A] font-bold block mb-1">Result</span>
+                <p>Transitioned 400+ enterprise accounts to SaaS. Annual recurring revenue grew 8x over 36 months. IoT integration captured 2B+ daily sensor data points; enabled predictive maintenance reducing water waste by 22%.</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-8 pt-6 border-t border-[#3E484F]/15 flex gap-6">
+            <div>
+              <div class="text-2xl font-['Plus_Jakarta_Sans'] font-black text-white">400+</div>
+              <div class="text-[10px] text-[#889299] uppercase tracking-wider">Enterprise Accounts</div>
+            </div>
+            <div>
+              <div class="text-2xl font-['Plus_Jakarta_Sans'] font-black text-white">8x</div>
+              <div class="text-[10px] text-[#889299] uppercase tracking-wider">ARR Growth (36mo)</div>
+            </div>
+            <div>
+              <div class="text-2xl font-['Plus_Jakarta_Sans'] font-black text-white">22%</div>
+              <div class="text-[10px] text-[#889299] uppercase tracking-wider">Water Waste Reduced</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4: Nomadz -->
+        <div class="bg-[#1b1b1b] rounded-2xl p-8 border border-[#3E484F]/15 hover:border-[#75d1ff]/20 transition-all duration-500 hover:-translate-y-1 flex flex-col justify-between" style="box-shadow: 0 0 40px rgba(58,176,226,0.06);">
+          <div>
+            <div class="flex items-start justify-between mb-6">
+              <div>
+                <span class="text-[10px] font-bold tracking-widest uppercase text-[#75d1ff] font-['Inter']">Growth Strategy</span>
+                <h3 class="text-2xl font-['Plus_Jakarta_Sans'] font-black text-white mt-1 tracking-tight">Nomadz</h3>
+                <span class="text-[10px] font-['Inter'] text-[#889299] uppercase tracking-widest">Co-Founder & Chief Product Officer · Boulder, CO</span>
+              </div>
+              <span class="text-[10px] font-mono bg-[#75d1ff]/10 text-[#75d1ff] px-3 py-1 rounded-full border border-[#75d1ff]/20 whitespace-nowrap">150K+ Users</span>
+            </div>
+            <div class="space-y-4 text-sm font-['Inter'] text-[#bdc8d0] leading-relaxed">
+              <div>
+                <span class="text-[10px] uppercase tracking-widest text-[#C8811A] font-bold block mb-1">Challenge</span>
+                <p>Fragmented outdoor adventure booking market with no unified platform connecting guides, travelers, and destination operators. High CAC, low retention, and no network effects.</p>
+              </div>
+              <div>
+                <span class="text-[10px] uppercase tracking-widest text-[#C8811A] font-bold block mb-1">Approach</span>
+                <p>Built peer-to-peer marketplace, implemented dynamic pricing engine, created destination-specific communities, and deployed AI-powered personalization for guide matching and itinerary recommendations.</p>
+              </div>
+              <div>
+                <span class="text-[10px] uppercase tracking-widest text-[#C8811A] font-bold block mb-1">Result</span>
+                <p>150K+ active users across 40 countries. $8M annual GMV. Retention improved to 65% month-over-month. 4x ROAS on paid acquisition. Guide marketplace grew to 3,200 active guides.</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-8 pt-6 border-t border-[#3E484F]/15 flex gap-6">
+            <div>
+              <div class="text-2xl font-['Plus_Jakarta_Sans'] font-black text-white">150K+</div>
+              <div class="text-[10px] text-[#889299] uppercase tracking-wider">Active Users</div>
+            </div>
+            <div>
+              <div class="text-2xl font-['Plus_Jakarta_Sans'] font-black text-white">$8M</div>
+              <div class="text-[10px] text-[#889299] uppercase tracking-wider">Annual GMV</div>
+            </div>
+            <div>
+              <div class="text-2xl font-['Plus_Jakarta_Sans'] font-black text-white">3.2K</div>
+              <div class="text-[10px] text-[#889299] uppercase tracking-wider">Active Guides</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 5: Green Life (Featured) -->
+        <div class="bg-[#1f1f1f] rounded-2xl p-8 border border-[#3E484F]/15 hover:border-[#75d1ff]/20 transition-all duration-500 hover:-translate-y-1 md:col-span-2 flex flex-col justify-between" style="box-shadow: 0 0 40px rgba(117,209,255,0.08);">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Main Content -->
+            <div class="md:col-span-2">
+              <div class="flex items-start justify-between mb-6">
+                <div>
+                  <span class="text-[10px] font-bold tracking-widest uppercase text-[#75d1ff] font-['Inter']">AI & Trust Platform</span>
+                  <h3 class="text-3xl font-['Plus_Jakarta_Sans'] font-black text-white mt-1 tracking-tight">Green Life</h3>
+                  <span class="text-[10px] font-['Inter'] text-[#889299] uppercase tracking-widest">Founder & Chief Executive Officer · San Francisco</span>
+                </div>
+                <span class="text-[10px] font-mono bg-[#75d1ff]/10 text-[#75d1ff] px-3 py-1 rounded-full border border-[#75d1ff]/20 whitespace-nowrap">Series A</span>
+              </div>
+              <div class="space-y-4 text-sm font-['Inter'] text-[#bdc8d0] leading-relaxed">
+                <div>
+                  <span class="text-[10px] uppercase tracking-widest text-[#C8811A] font-bold block mb-1">Challenge</span>
+                  <p>E-commerce sustainability claims are unverified, fragmented, and often misleading. Consumers lack trust signals, and brands lack unified attribution frameworks for environmental impact.</p>
+                </div>
+                <div>
+                  <span class="text-[10px] uppercase tracking-widest text-[#C8811A] font-bold block mb-1">Approach</span>
+                  <p>Built AI-powered supply chain verification system using multi-modal data (satellite, IoT, blockchain audit logs) to certify environmental claims. Created brand dashboards with real-time impact metrics and consumer transparency layers integrated into checkout flows.</p>
+                </div>
+                <div>
+                  <span class="text-[10px] uppercase tracking-widest text-[#C8811A] font-bold block mb-1">Result</span>
+                  <p>Onboarded 280+ brands spanning fashion, beauty, food & beverage, and home goods. Platform verified 12M+ product SKUs. Average customer AOV increased 18% with Green Life verified badges. Raised Series A at $120M post-valuation.</p>
+                </div>
+              </div>
+              <div class="mt-8 pt-6 border-t border-[#3E484F]/15 grid grid-cols-3 gap-6">
+                <div>
+                  <div class="text-2xl font-['Plus_Jakarta_Sans'] font-black text-white">280+</div>
+                  <div class="text-[10px] text-[#889299] uppercase tracking-wider">Brands Onboarded</div>
+                </div>
+                <div>
+                  <div class="text-2xl font-['Plus_Jakarta_Sans'] font-black text-white">12M+</div>
+                  <div class="text-[10px] text-[#889299] uppercase tracking-wider">SKUs Verified</div>
+                </div>
+                <div>
+                  <div class="text-2xl font-['Plus_Jakarta_Sans'] font-black text-white">18%</div>
+                  <div class="text-[10px] text-[#889299] uppercase tracking-wider">AOV Lift</div>
+                </div>
+              </div>
+            </div>
+            <!-- Sidebar Info -->
+            <div class="space-y-8 md:border-l border-[#3E484F]/15 md:pl-8">
+              <div>
+                <h4 class="text-[10px] font-bold uppercase tracking-widest text-[#75d1ff] font-['Inter'] mb-3">Platform Architecture</h4>
+                <div class="space-y-2 text-[12px] text-[#889299] font-['Inter'] leading-relaxed">
+                  <p>• Distributed supply chain crawler</p>
+                  <p>• ML-powered compliance engine</p>
+                  <p>• Real-time impact scoring</p>
+                  <p>• Blockchain settlement layer</p>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-[10px] font-bold uppercase tracking-widest text-[#75d1ff] font-['Inter'] mb-3">Tech Stack</h4>
+                <div class="space-y-2 text-[12px] text-[#889299] font-['Inter'] leading-relaxed">
+                  <p>• Python/FastAPI backend</p>
+                  <p>• React + D3 frontends</p>
+                  <p>• PostgreSQL + Redis</p>
+                  <p>• TensorFlow + PyTorch</p>
+                  <p>• Ethereum smart contracts</p>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-[10px] font-bold uppercase tracking-widest text-[#75d1ff] font-['Inter'] mb-3">Phase 1 Target</h4>
+                <div class="space-y-2 text-[12px] text-[#889299] font-['Inter'] leading-relaxed">
+                  <p>• 500+ brands verified</p>
+                  <p>• $5M annual GMV</p>
+                  <p>• 50M+ product SKUs</p>
+                  <p>• Enterprise API integrations</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
 </main>
 <!-- Footer -->
 <footer class="bg-[#000000] w-full relative py-20 tonal-shift-from-surface-to-black">
@@ -321,5 +600,35 @@ function toggleMobileMenu() {
   const menu = document.getElementById('mobile-menu');
   menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
 }
+
+function openCaseStudiesModal() {
+  const modal = document.getElementById('case-studies-modal');
+  modal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCaseStudiesModal() {
+  const modal = document.getElementById('case-studies-modal');
+  modal.classList.add('hidden');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.getElementById('case-studies-modal');
+
+  // Close when backdrop is clicked
+  modal.addEventListener('click', function(event) {
+    if (event.target === modal) {
+      closeCaseStudiesModal();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+      closeCaseStudiesModal();
+    }
+  });
+});
 </script>
 </body></html>
