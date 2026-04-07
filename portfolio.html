@@ -118,6 +118,19 @@
         .archive-meta { position: absolute; bottom: 0; left: 0; right: 0; padding: 24px; background: linear-gradient(to top, rgba(0,0,0,0.95), transparent); transform: translateY(100%); transition: transform 0.5s ease; z-index: 20; }
         .archive-card:hover .archive-meta { transform: translateY(0); }
         .gt-headline { letter-spacing: -0.02em; line-height: 0.9; }
+        .gt-tight { letter-spacing: -0.02em; line-height: 0.95; }
+
+        /* Methodology modal styles */
+        .glass-panel { background: rgba(19, 19, 19, 0.7); backdrop-filter: blur(40px); }
+        .blue-ring { box-shadow: inset 0 0 0 1px rgba(117, 209, 255, 0.15), 0 0 20px rgba(117, 209, 255, 0.05); }
+        .kanban-card { transition: transform 0.2s ease, box-shadow 0.2s ease; cursor: default; }
+        .kanban-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(117,209,255,0.08); }
+        .sprint-node { transition: border-color 0.3s, box-shadow 0.3s; }
+        .sprint-node:hover { box-shadow: 0 0 30px rgba(117,209,255,0.15); }
+        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+        .pulse { animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite; }
+        .progress-fill { transition: width 0.8s ease; }
+        .material-symbols-filled { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
     </style>
     <!-- Calendly link widget begin -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -284,7 +297,7 @@
     <span class="text-[10px] font-mono bg-surface-container px-2 py-1 rounded text-primary">CREATIVE</span>
     <span class="text-[10px] font-mono bg-surface-container px-2 py-1 rounded text-primary">CONVERSION</span>
 </div>
-<button class="group flex items-center gap-3 text-sm font-bold text-white hover:text-primary transition-colors">
+<button onclick="openMethodologyModal()" class="group flex items-center gap-3 text-sm font-bold text-white hover:text-primary transition-colors">
                 Review Performance
                 <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
 </button>
@@ -1183,5 +1196,311 @@ function toggleTsCard(btn) {
     if (chevron) chevron.style.transform = 'rotate(180deg)';
   }
 }
+
+function openMethodologyModal() {
+  const modal = document.getElementById('methodology-modal');
+  modal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMethodologyModal() {
+  const modal = document.getElementById('methodology-modal');
+  modal.classList.add('hidden');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const methodologyModal = document.getElementById('methodology-modal');
+  methodologyModal.addEventListener('click', function(e) {
+    if (e.target === methodologyModal) closeMethodologyModal();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && !methodologyModal.classList.contains('hidden')) {
+      closeMethodologyModal();
+    }
+  });
+});
 </script>
+
+<!-- Methodology Modal -->
+<div id="methodology-modal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+  <div class="bg-[#131313] rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-[#3E484F]/30 relative">
+    <!-- Close button -->
+    <button onclick="closeMethodologyModal()" class="absolute top-6 right-6 z-10 p-2 hover:bg-white/10 rounded-full transition-colors">
+      <span class="material-symbols-outlined text-white">close</span>
+    </button>
+
+    <!-- Modal content -->
+    <div class="p-8 md:p-12">
+
+      <!-- Hero -->
+      <div class="mb-10">
+        <div class="inline-flex items-center gap-2 mb-6 px-3 py-1.5 rounded-full bg-surface-container-low border border-outline-variant/15">
+          <span class="w-2 h-2 rounded-full bg-secondary pulse"></span>
+          <span class="text-[10px] font-bold tracking-[0.12em] uppercase text-secondary">How We Work</span>
+        </div>
+        <h2 class="font-headline font-black text-white gt-tight text-4xl md:text-6xl mb-6">The Operating<br/>System.</h2>
+        <p class="text-on-surface-variant text-lg leading-relaxed max-w-2xl">
+          We don't just solve the problem you walk in with. We install the rhythm that keeps producing answers long after we're done. Agile principles, Scrum delivery, Kanban visibility — one system.
+        </p>
+      </div>
+
+      <!-- Agile Principles -->
+      <div class="mb-10">
+        <div class="mb-6">
+          <span class="text-[10px] font-bold tracking-[0.15em] uppercase text-primary mb-3 block">Foundation</span>
+          <h3 class="font-headline font-black text-white gt-tight text-2xl md:text-4xl mb-4">Agile is not a process.<br/>It's a discipline.</h3>
+          <p class="text-on-surface-variant text-base leading-relaxed max-w-lg">
+            Most agencies say they're agile. We run it — four governing principles, every engagement, no exceptions.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-surface-container-low rounded-2xl p-6 border border-outline-variant/10 hover:border-primary/25 transition-all duration-300 group">
+            <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/15 transition-colors">
+              <span class="material-symbols-outlined text-primary">people</span>
+            </div>
+            <h4 class="font-headline font-bold text-white text-base mb-2">People Over Process</h4>
+            <p class="text-on-surface-variant text-sm leading-relaxed">Individuals and interactions first. Your team, our team — one system of trust and direct communication, no layers between the work and the people doing it.</p>
+          </div>
+          <div class="bg-surface-container-low rounded-2xl p-6 border border-outline-variant/10 hover:border-secondary/25 transition-all duration-300 group">
+            <div class="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center mb-4 group-hover:bg-secondary/15 transition-colors">
+              <span class="material-symbols-outlined text-secondary">rocket_launch</span>
+            </div>
+            <h4 class="font-headline font-bold text-white text-base mb-2">Working Software, Always</h4>
+            <p class="text-on-surface-variant text-sm leading-relaxed">Every sprint ends with something real — not a deck, not a status update. A deliverable you can touch, test, and deploy.</p>
+          </div>
+          <div class="bg-surface-container-low rounded-2xl p-6 border border-outline-variant/10 hover:border-primary/25 transition-all duration-300 group">
+            <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/15 transition-colors">
+              <span class="material-symbols-outlined text-primary">handshake</span>
+            </div>
+            <h4 class="font-headline font-bold text-white text-base mb-2">Client Collaboration</h4>
+            <p class="text-on-surface-variant text-sm leading-relaxed">You're not a bystander. You're in the sprint. Contracts set scope; collaboration shapes what actually ships.</p>
+          </div>
+          <div class="bg-surface-container-low rounded-2xl p-6 border border-outline-variant/10 hover:border-secondary/25 transition-all duration-300 group">
+            <div class="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center mb-4 group-hover:bg-secondary/15 transition-colors">
+              <span class="material-symbols-outlined text-secondary">change_circle</span>
+            </div>
+            <h4 class="font-headline font-bold text-white text-base mb-2">Responding to Change</h4>
+            <p class="text-on-surface-variant text-sm leading-relaxed">Markets move. We move with them. Plans are a starting point, not a ceiling. When the signal changes, the work changes.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sprint Cadence -->
+      <div class="mb-10 py-8 border-t border-outline-variant/10">
+        <div class="mb-8">
+          <span class="text-[10px] font-bold tracking-[0.15em] uppercase text-secondary mb-3 block">Sprint Cadence</span>
+          <h3 class="font-headline font-black text-white gt-tight text-2xl md:text-4xl mb-4">30-day cycles<br/>that compound.</h3>
+          <p class="text-on-surface-variant text-base leading-relaxed max-w-xl">
+            The goal is a 30-day sprint cadence — but we earn it. Most teams need 60–90 days of practice to get there. We build the rhythm together, tighten it every cycle, and by the time the cadence clicks, your team runs it like second nature.
+          </p>
+        </div>
+        <div class="flex justify-center mb-8">
+          <div class="border border-primary/20 rounded-full px-6 py-2.5 flex items-center gap-3 bg-black/30">
+            <span class="w-2 h-2 rounded-full bg-primary pulse"></span>
+            <span class="text-primary font-headline font-bold text-sm tracking-[-0.02em]">30-DAY SPRINT CYCLE</span>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="flex flex-col items-center text-center">
+            <div class="sprint-node w-20 h-20 rounded-2xl border border-primary/30 flex flex-col items-center justify-center mb-4 bg-black/40">
+              <span class="material-symbols-outlined text-primary text-2xl mb-1">event_note</span>
+              <span class="text-[8px] font-bold text-primary/50 tracking-widest uppercase">Day 1</span>
+            </div>
+            <h4 class="font-headline font-bold text-white text-sm mb-1">Sprint Planning</h4>
+            <p class="text-on-surface-variant text-xs leading-relaxed">Backlog items prioritized, assigned, and committed by name.</p>
+          </div>
+          <div class="flex flex-col items-center text-center">
+            <div class="sprint-node w-20 h-20 rounded-2xl border border-secondary/30 flex flex-col items-center justify-center mb-4 bg-black/40">
+              <span class="material-symbols-outlined text-secondary text-2xl mb-1">alarm</span>
+              <span class="text-[8px] font-bold text-secondary/50 tracking-widest uppercase">Daily</span>
+            </div>
+            <h4 class="font-headline font-bold text-white text-sm mb-1">Daily Standup</h4>
+            <p class="text-on-surface-variant text-xs leading-relaxed">15 minutes. What's done. What's next. What's blocked.</p>
+          </div>
+          <div class="flex flex-col items-center text-center">
+            <div class="sprint-node w-20 h-20 rounded-2xl border border-primary/30 flex flex-col items-center justify-center mb-4 bg-black/40">
+              <span class="material-symbols-outlined text-primary text-2xl mb-1">verified</span>
+              <span class="text-[8px] font-bold text-primary/50 tracking-widest uppercase">Day 28</span>
+            </div>
+            <h4 class="font-headline font-bold text-white text-sm mb-1">Sprint Review</h4>
+            <p class="text-on-surface-variant text-xs leading-relaxed">Live demo. Open questions. Honest assessment.</p>
+          </div>
+          <div class="flex flex-col items-center text-center">
+            <div class="sprint-node w-20 h-20 rounded-2xl border border-secondary/30 flex flex-col items-center justify-center mb-4 bg-black/40">
+              <span class="material-symbols-outlined text-secondary text-2xl mb-1">autorenew</span>
+              <span class="text-[8px] font-bold text-secondary/50 tracking-widest uppercase">Day 30</span>
+            </div>
+            <h4 class="font-headline font-bold text-white text-sm mb-1">Retrospective</h4>
+            <p class="text-on-surface-variant text-xs leading-relaxed">What worked. What didn't. Tighten before the next cycle.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kanban Board -->
+      <div class="mb-10 py-8 border-t border-outline-variant/10">
+        <div class="mb-6">
+          <span class="text-[10px] font-bold tracking-[0.15em] uppercase text-primary mb-3 block">Visual Workflow</span>
+          <h3 class="font-headline font-black text-white gt-tight text-2xl md:text-4xl mb-4">The Kanban.<br/>Nothing hidden.</h3>
+          <p class="text-on-surface-variant text-base leading-relaxed max-w-xl">Every task. Every owner. Every status. The board is always live, always shared.</p>
+        </div>
+        <div class="rounded-2xl border border-outline-variant/15 overflow-hidden" style="background: #080808;">
+          <div class="flex items-center gap-3 px-5 py-3 border-b border-outline-variant/10" style="background: rgba(19,19,19,0.9);">
+            <div class="flex gap-1.5">
+              <div class="w-3 h-3 rounded-full bg-[#FF5F56]"></div>
+              <div class="w-3 h-3 rounded-full bg-[#FFBD2E]"></div>
+              <div class="w-3 h-3 rounded-full bg-[#27C93F]"></div>
+            </div>
+            <span class="text-on-surface-variant/30 text-xs font-mono ml-1">edelleye — sprint-board — current</span>
+            <div class="ml-auto flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#27C93F] pulse"></span>
+              <span class="text-on-surface-variant/30 text-xs font-mono">live</span>
+            </div>
+          </div>
+          <div class="flex overflow-x-auto" style="min-height: 300px;">
+            <div class="flex-1 min-w-[160px] border-r border-outline-variant/10 flex flex-col">
+              <div class="px-3 py-2.5 border-b border-outline-variant/10 flex items-center justify-between" style="background: #080808;">
+                <div class="flex items-center gap-2">
+                  <div class="w-1.5 h-1.5 rounded-full bg-outline/50"></div>
+                  <span class="text-[9px] font-bold tracking-[0.1em] uppercase text-on-surface-variant/50">Backlog</span>
+                </div>
+                <span class="text-[9px] font-mono text-on-surface-variant/40 bg-surface-container-low px-1.5 py-0.5 rounded-full">4</span>
+              </div>
+              <div class="p-2.5 space-y-2 flex-1">
+                <div class="kanban-card bg-surface-container-low rounded-xl p-2.5 border border-outline-variant/10">
+                  <div class="text-[8px] text-outline/60 font-bold uppercase tracking-wider mb-1">Strategy</div>
+                  <div class="text-xs text-on-surface font-medium leading-snug">User persona mapping — 3 archetypes</div>
+                </div>
+                <div class="kanban-card bg-surface-container-low rounded-xl p-2.5 border border-outline-variant/10">
+                  <div class="text-[8px] text-outline/60 font-bold uppercase tracking-wider mb-1">Content</div>
+                  <div class="text-xs text-on-surface font-medium leading-snug">Product messaging framework — v1</div>
+                </div>
+                <div class="kanban-card bg-surface-container-low rounded-xl p-2.5 border border-outline-variant/10">
+                  <div class="text-[8px] text-outline/60 font-bold uppercase tracking-wider mb-1">Dev</div>
+                  <div class="text-xs text-on-surface font-medium leading-snug">Performance audit — Core Web Vitals</div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-1 min-w-[160px] border-r border-outline-variant/10 flex flex-col">
+              <div class="px-3 py-2.5 border-b border-outline-variant/10 flex items-center justify-between" style="background: #080808;">
+                <div class="flex items-center gap-2">
+                  <div class="w-1.5 h-1.5 rounded-full bg-secondary/60"></div>
+                  <span class="text-[9px] font-bold tracking-[0.1em] uppercase text-on-surface-variant/50">Ideation</span>
+                </div>
+                <span class="text-[9px] font-mono text-on-surface-variant/40 bg-surface-container-low px-1.5 py-0.5 rounded-full">3</span>
+              </div>
+              <div class="p-2.5 space-y-2 flex-1">
+                <div class="kanban-card bg-surface-container-low rounded-xl p-2.5 border border-secondary/15">
+                  <div class="text-[8px] text-secondary font-bold uppercase tracking-wider mb-1">Discovery</div>
+                  <div class="text-xs text-on-surface font-medium leading-snug">Affinity program — concept brief</div>
+                </div>
+                <div class="kanban-card bg-surface-container-low rounded-xl p-2.5 border border-secondary/15">
+                  <div class="text-[8px] text-secondary font-bold uppercase tracking-wider mb-1">Research</div>
+                  <div class="text-xs text-on-surface font-medium leading-snug">Competitive whitespace — 3 angles</div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-1 min-w-[160px] border-r border-outline-variant/10 flex flex-col" style="background: rgba(117,209,255,0.012);">
+              <div class="px-3 py-2.5 border-b border-primary/10 flex items-center justify-between" style="background: rgba(117,209,255,0.025);">
+                <div class="flex items-center gap-2">
+                  <div class="w-1.5 h-1.5 rounded-full bg-primary pulse"></div>
+                  <span class="text-[9px] font-bold tracking-[0.1em] uppercase text-primary/70">Design</span>
+                </div>
+                <span class="text-[9px] font-mono text-primary/50 border border-primary/20 px-1.5 py-0.5 rounded-full">2/3 WIP</span>
+              </div>
+              <div class="p-2.5 space-y-2 flex-1">
+                <div class="kanban-card rounded-xl p-2.5 border border-primary/20" style="background: rgba(117,209,255,0.04);">
+                  <div class="text-[8px] text-primary font-bold uppercase tracking-wider mb-1">Visual</div>
+                  <div class="text-xs text-on-surface font-medium leading-snug">Homepage hero — 3 visual directions</div>
+                  <div class="mt-2 w-full bg-primary/10 rounded-full h-1 overflow-hidden">
+                    <div class="bg-primary h-full rounded-full progress-fill" style="width: 65%"></div>
+                  </div>
+                </div>
+                <div class="kanban-card rounded-xl p-2.5 border border-primary/20" style="background: rgba(117,209,255,0.04);">
+                  <div class="text-[8px] text-primary font-bold uppercase tracking-wider mb-1">Brand</div>
+                  <div class="text-xs text-on-surface font-medium leading-snug">Identity system — mark & palette</div>
+                  <div class="mt-2 w-full bg-primary/10 rounded-full h-1 overflow-hidden">
+                    <div class="bg-primary h-full rounded-full progress-fill" style="width: 40%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-1 min-w-[160px] flex flex-col">
+              <div class="px-3 py-2.5 border-b border-outline-variant/10 flex items-center justify-between" style="background: #080808;">
+                <div class="flex items-center gap-2">
+                  <div class="w-1.5 h-1.5 rounded-full" style="background: rgba(74,222,128,0.7);"></div>
+                  <span class="text-[9px] font-bold tracking-[0.1em] uppercase text-on-surface-variant/50">Transition</span>
+                </div>
+                <span class="text-[9px] font-mono px-1.5 py-0.5 rounded-full" style="color: rgba(74,222,128,0.6); background: rgba(74,222,128,0.08);">5</span>
+              </div>
+              <div class="p-2.5 space-y-2 flex-1">
+                <div class="kanban-card bg-surface-container-low rounded-xl p-2.5 opacity-75" style="border: 1px solid rgba(74,222,128,0.10);">
+                  <div class="flex items-center gap-1 mb-1">
+                    <span class="material-symbols-outlined material-symbols-filled text-sm" style="color: #4ade80;">check_circle</span>
+                    <div class="text-[8px] font-bold uppercase tracking-wider" style="color: rgba(74,222,128,0.6);">Strategy</div>
+                  </div>
+                  <div class="text-xs text-on-surface/50 font-medium leading-snug">Market positioning — GTM framework</div>
+                </div>
+                <div class="kanban-card bg-surface-container-low rounded-xl p-2.5 opacity-75" style="border: 1px solid rgba(74,222,128,0.10);">
+                  <div class="flex items-center gap-1 mb-1">
+                    <span class="material-symbols-outlined material-symbols-filled text-sm" style="color: #4ade80;">check_circle</span>
+                    <div class="text-[8px] font-bold uppercase tracking-wider" style="color: rgba(74,222,128,0.6);">Platform</div>
+                  </div>
+                  <div class="text-xs text-on-surface/50 font-medium leading-snug">User auth — v1.0 live</div>
+                </div>
+                <div class="kanban-card bg-surface-container-low rounded-xl p-2.5 opacity-75" style="border: 1px solid rgba(74,222,128,0.10);">
+                  <div class="flex items-center gap-1 mb-1">
+                    <span class="material-symbols-outlined material-symbols-filled text-sm" style="color: #4ade80;">check_circle</span>
+                    <div class="text-[8px] font-bold uppercase tracking-wider" style="color: rgba(74,222,128,0.6);">Design</div>
+                  </div>
+                  <div class="text-xs text-on-surface/50 font-medium leading-snug">Component library — 48 components</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Outcomes -->
+      <div class="py-8 border-t border-outline-variant/10">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+          <div class="md:col-span-7 glass-panel rounded-2xl p-8 border border-primary/10 blue-ring flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] font-bold tracking-[0.15em] uppercase text-primary mb-4 block">The Result</span>
+              <h3 class="font-headline font-black text-white gt-tight text-2xl md:text-3xl mb-4">
+                You don't just get deliverables.<br/>You get the system that<br/>keeps producing them.
+              </h3>
+              <p class="text-on-surface-variant leading-relaxed">
+                Every sprint builds organizational memory. Every retrospective tightens the machine. By the end of an engagement, your team knows how to run these rhythms without us. That's the point.
+              </p>
+            </div>
+            <div class="mt-8 pt-6 border-t border-outline-variant/10">
+              <p class="text-on-surface-variant/40 text-sm italic leading-relaxed">
+                "It will be obvious that we have been here before, learned from you, and are there to help you move the needle."
+              </p>
+            </div>
+          </div>
+          <div class="md:col-span-5 flex flex-col gap-4">
+            <div class="flex-1 bg-surface-container-low rounded-2xl p-6 border border-outline-variant/10">
+              <span class="text-[10px] font-bold tracking-widest uppercase text-secondary mb-2 block">Time to Market</span>
+              <div class="font-headline font-black text-white gt-tight text-4xl mb-1">40%</div>
+              <div class="text-on-surface-variant text-sm">Faster average delivery. 6 months → 3.5 months.</div>
+            </div>
+            <div class="flex-1 bg-surface-container-low rounded-2xl p-6 border border-outline-variant/10">
+              <span class="text-[10px] font-bold tracking-widest uppercase text-primary mb-2 block">Client Retention</span>
+              <div class="font-headline font-black text-white gt-tight text-4xl mb-1">85%</div>
+              <div class="text-on-surface-variant text-sm">Because the rhythm earns trust that briefs don't.</div>
+            </div>
+            <div class="flex-1 bg-surface-container-low rounded-2xl p-6 border border-outline-variant/10">
+              <span class="text-[10px] font-bold tracking-widest uppercase text-secondary mb-2 block">Revenue Lift</span>
+              <div class="font-headline font-black text-white gt-tight text-4xl mb-1">32%</div>
+              <div class="text-on-surface-variant text-sm">Average increase across engagements.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 </body></html>
