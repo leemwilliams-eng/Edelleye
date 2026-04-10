@@ -103,6 +103,106 @@
         @media (min-width: 768px) {
           #mobile-menu-btn { display: none !important; }
         }
+
+        /* Video Modal Styles */
+        .video-modal-overlay {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.85);
+          backdrop-filter: blur(4px);
+          z-index: 100;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .video-modal-overlay.active {
+          display: flex;
+        }
+
+        .video-modal-container {
+          position: relative;
+          background-color: #1b1b1b;
+          border: 1px solid #3E484F;
+          border-radius: 1rem;
+          width: 90%;
+          max-width: 900px;
+          aspect-ratio: 16 / 9;
+          overflow: hidden;
+          box-shadow: 0 20px 60px rgba(117, 209, 255, 0.1);
+        }
+
+        .video-modal-container video {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+
+        .video-modal-close {
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+          width: 2.5rem;
+          height: 2.5rem;
+          background-color: rgba(0, 0, 0, 0.6);
+          border: 1px solid rgba(117, 209, 255, 0.3);
+          border-radius: 50%;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 101;
+          transition: all 0.3s ease;
+          font-size: 1.5rem;
+          color: #75d1ff;
+        }
+
+        .video-modal-close:hover {
+          background-color: rgba(117, 209, 255, 0.2);
+          border-color: rgba(117, 209, 255, 0.6);
+          transform: scale(1.1);
+        }
+
+        .video-showcase-button {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          background: linear-gradient(135deg, #75d1ff 0%, #5ba0cc 100%);
+          color: black;
+          font-weight: 700;
+          font-size: 0.875rem;
+          padding: 0.875rem 1.75rem;
+          border: none;
+          border-radius: 2rem;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+        }
+
+        .video-showcase-button:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(117, 209, 255, 0.3);
+        }
+
+        .video-showcase-button:active {
+          transform: translateY(0);
+        }
+
+        @media (max-width: 767px) {
+          .video-modal-container {
+            width: 95%;
+            max-width: 100%;
+          }
+          .video-modal-close {
+            width: 2rem;
+            height: 2rem;
+            font-size: 1.25rem;
+          }
+        }
 </style>
     <!-- Calendly link widget begin -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -220,6 +320,31 @@ To achieve market placement, we use design and creative, strategy and acquisitio
 </div>
 </div>
 </section>
+
+<!-- Video Showcase Section -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 mb-24 md:mb-32 flex flex-col items-center">
+<div class="text-center mb-12">
+<h3 class="text-2xl md:text-3xl font-headline font-bold text-white mb-4 gt-headline">Why Edelleye?</h3>
+<p class="text-on-surface-variant text-base max-w-2xl mx-auto mb-8">Watch our process in action. See how the Edelleye Growth Engine works end-to-end.</p>
+<button class="video-showcase-button" onclick="openVideoModal()">
+<span class="material-symbols-outlined" style="font-size: 1.25rem;">play_circle</span>
+View Growth Engine Video
+</button>
+</div>
+</section>
+
+<!-- Video Modal -->
+<div class="video-modal-overlay" id="videoModal">
+<div class="video-modal-container">
+<button class="video-modal-close" onclick="closeVideoModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+<video controls preload="metadata">
+<source src="edelleye-growth-engine.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
 
 <!-- Service Grid Section (Bento Matrix) -->
 <section class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 mb-24 md:mb-32">
@@ -673,6 +798,46 @@ function toggleTsCard(btn) {
 
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeTechStackDrawer();
+});
+
+// Video Modal Functions
+function openVideoModal() {
+  var modal = document.getElementById('videoModal');
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+  var video = modal.querySelector('video');
+  video.play();
+}
+
+function closeVideoModal() {
+  var modal = document.getElementById('videoModal');
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
+  var video = modal.querySelector('video');
+  video.pause();
+  video.currentTime = 0;
+}
+
+// Close modal when clicking overlay (not the container)
+document.addEventListener('DOMContentLoaded', function() {
+  var overlay = document.getElementById('videoModal');
+  if (overlay) {
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) {
+        closeVideoModal();
+      }
+    });
+  }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    var modal = document.getElementById('videoModal');
+    if (modal && modal.classList.contains('active')) {
+      closeVideoModal();
+    }
+  }
 });
 </script>
 </body></html>
