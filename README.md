@@ -149,7 +149,7 @@ Mismatch = 404 in production. Always cross-reference `git ls-files` output with 
 
 ## License
 
-This project operates under the **Community Commons Attribution License** standard.
+This project operates under the **Creative Commons Attribution License** standard.
 
 **You are free to:**
 - Share, adapt, and build upon this work
@@ -158,10 +158,10 @@ This project operates under the **Community Commons Attribution License** standa
 
 **Under the condition that you:**
 - **Attribute** the original work to Edelleye Digital
-- **License** any derivative works under the same Community Commons Attribution terms
+- **License** any derivative works under the same Creative Commons Attribution terms
 - **Provide attribution** in any published version or fork (credit Edelleye Digital as the source)
 
-For full license details, see [Community Commons](https://commonsware.com/).
+For full license details, see [Creative Commons](https://creativecommons.org/).
 
 ## Questions?
 
